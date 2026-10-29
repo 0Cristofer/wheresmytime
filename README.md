@@ -6,6 +6,13 @@ A tiny desktop timer for seeing where your workday goes. Press **Start** when yo
 - Fully offline. The app has no network code at all: no accounts, sync or telemetry.
 - Your data is a single JSON file next to the executable.
 
+**[Download the latest release](https://github.com/0Cristofer/wheresmytime/releases/latest)** for Windows, macOS or Linux.
+
+<p align="center">
+  <img src="docs/screenshots/main-light.png" width="380" alt="Main window in light mode, with a timer running and today's entries listed below">&nbsp;
+  <img src="docs/screenshots/main-dark.png" width="380" alt="The same window in dark mode">
+</p>
+
 ## Using it
 
 **Timer**
@@ -14,6 +21,10 @@ A tiny desktop timer for seeing where your workday goes. Press **Start** when yo
 - **Stop** opens a confirmation dialog with the activity, details, date, start and end times, all editable. If the activity is already filled in, Enter saves. **Keep running** goes back to the timer, and **Discard** throws the timer away.
 - The timer survives closing the app. Its start time is saved, so it is still running when you reopen.
 - While it runs, the elapsed time shows in the window title and taskbar.
+
+<p align="center">
+  <img src="docs/screenshots/stop-dialog.png" width="400" alt="The dialog that opens when you stop the timer, with activity, details, date, start and end">
+</p>
 
 **Entries**
 - The day's entries are listed under the timer, newest first, with the day's total. Use ‹ › to look at other days.
@@ -38,16 +49,23 @@ A tiny desktop timer for seeing where your workday goes. Press **Start** when yo
   - Your biggest activities keep the same colour whatever range you pick. Beyond seven activities, the smallest are grouped as "Other".
 - **Copy** puts the stats on the clipboard as text. **Export CSV** saves just the entries in that range.
 
+<p align="center">
+  <img src="docs/screenshots/stats-breakdown.png" width="420" alt="Stats, Breakdown tab: time per week over the last 12 weeks, stacked by activity">&nbsp;
+  <img src="docs/screenshots/stats-trend.png" width="420" alt="Stats, Trend tab in dark mode: one line per activity, with Project Atlas highlighted and growing">
+</p>
+
 **Export / Import**: **Export** saves every entry to a CSV file. **Import** adds entries from a CSV. Entries you already have (same id, or same start, end and activity) are skipped, so importing the same file twice is harmless.
 
 ## Try it with sample data
 
-[`samples/sample-entries.csv`](samples/sample-entries.csv) holds 377 entries covering 2026-08-03 to 2026-10-28. Project Atlas grows over that period, Chat shrinks, and there are enough activities for "Other" to appear. It also includes:
+There are two samples:
 
-- a deploy every Thursday night that runs past midnight
-- details with commas, quotes and accents
+- [`samples/sample-few-days.csv`](samples/sample-few-days.csv): 34 entries over five workdays, 2026-10-22 to 2026-10-28 (Thursday to Wednesday, across a weekend). Good for the day list, editing, and the **This week** / **Last week** stats.
+- [`samples/sample-entries.csv`](samples/sample-entries.csv): 377 entries covering 2026-08-03 to 2026-10-28. Project Atlas grows over that period, Chat shrinks, and there are enough activities for "Other" to appear. Good for the Breakdown and Trend charts.
 
-To try it without mixing it into your own data, run the app on a throwaway data folder, `samples/sandbox/`, which git ignores:
+Both include an entry that runs past midnight and details with quotes, commas and accents. Their dates overlap, so import one at a time (start over with `-Reset` in between).
+
+To try them without mixing them into your own data, run the app on a throwaway data folder, `samples/sandbox/`, which git ignores:
 
 ```bash
 powershell -ExecutionPolicy Bypass -File samples/try.ps1
@@ -55,11 +73,11 @@ powershell -ExecutionPolicy Bypass -File samples/try.ps1
 
 On macOS or Linux, run `./samples/try.sh` instead. Then:
 
-1. Click **Import** and pick `samples/sample-entries.csv`.
-2. Open **Stats**, choose **Last 12 weeks**, and look at the Breakdown and Trend tabs.
+1. Click **Import** and pick one of the samples.
+2. Use ‹ › to step through the days, or open **Stats**. With the 12-week sample, choose **Last 12 weeks** and look at the Breakdown and Trend tabs.
 3. Click a line or a legend name to highlight that activity.
 
-Add `-Reset` (or `--reset`) to start over with an empty sandbox. The sample's dates are fixed, so if you try it much later, use the date pickers to go back to that period.
+Add `-Reset` (or `--reset`) to start over with an empty sandbox. The samples' dates are fixed, so if you try them much later, use the date pickers (or ‹ ›) to go back to that period.
 
 ## Your data
 
@@ -142,7 +160,8 @@ src/WheresMyTime/
   ViewModels/   main window, entry dialog, stats
   Views/        Avalonia windows (XAML), the charts (TimeChart base, Breakdown and Trend), and the UiServices glue
 tests/WheresMyTime.Tests/   unit tests for Core and EntryStore
-samples/                    sample CSV and the sandbox launcher
+samples/                    sample CSVs and the sandbox launcher
+docs/screenshots/           the README screenshots
 tools/make-icon.ps1         draws the app icon
 ```
 
