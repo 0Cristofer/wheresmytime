@@ -25,6 +25,15 @@ public sealed partial class LegendItem(string name, string totalText, int? slot)
     public partial bool IsDimmed { get; set; }
 }
 
+public sealed partial class PresetChip(string key, string label) : ObservableObject
+{
+    public string Key { get; } = key;
+    public string Label { get; } = label;
+
+    [ObservableProperty]
+    public partial bool IsSelected { get; set; }
+}
+
 public sealed partial class StatsViewModel : ObservableObject, IDisposable
 {
     readonly EntryStore _store;
@@ -38,6 +47,12 @@ public sealed partial class StatsViewModel : ObservableObject, IDisposable
         Preset("ThisWeek");
         _store.Saved += Rebuild;
     }
+
+    public IReadOnlyList<PresetChip> Presets { get; } =
+    [
+        new("Today", "Today"), new("Yesterday", "Yesterday"), new("ThisWeek", "This week"), new("LastWeek", "Last week"),
+        new("ThisMonth", "This month"), new("LastMonth", "Last month"), new("Last12Weeks", "Last 12 weeks"), new("ThisYear", "This year"),
+    ];
 
     public ObservableCollection<ActivityRow> Activities { get; } = [];
     public ObservableCollection<DayRow> Days { get; } = [];
@@ -96,10 +111,17 @@ public sealed partial class StatsViewModel : ObservableObject, IDisposable
     [RelayCommand]
     void Preset(string name)
     {
+        var (from, to) = PresetRange(name);
+        From = from.ToDateTime(TimeOnly.MinValue);
+        To = to.ToDateTime(TimeOnly.MinValue);
+    }
+
+    static (DateOnly From, DateOnly To) PresetRange(string name)
+    {
         var today = TimeUtil.Today();
         var monday = today.AddDays(-(((int)today.DayOfWeek + 6) % 7));
         var firstOfMonth = new DateOnly(today.Year, today.Month, 1);
-        var (from, to) = name switch
+        return name switch
         {
             "Today" => (today, today),
             "Yesterday" => (today.AddDays(-1), today.AddDays(-1)),
@@ -111,8 +133,6 @@ public sealed partial class StatsViewModel : ObservableObject, IDisposable
             "ThisYear" => (new DateOnly(today.Year, 1, 1), new DateOnly(today.Year, 12, 31)),
             _ => (monday, monday.AddDays(6)),
         };
-        From = from.ToDateTime(TimeOnly.MinValue);
-        To = to.ToDateTime(TimeOnly.MinValue);
     }
 
     [RelayCommand]
@@ -172,6 +192,8 @@ public sealed partial class StatsViewModel : ObservableObject, IDisposable
             ? TimeUtil.FormatDay(stats.From)
             : $"{TimeUtil.FormatDate(stats.From)} → {TimeUtil.FormatDate(stats.To)}";
         SummaryText = $"{range} · {stats.EntryCount} entries · {TimeUtil.FormatHours(stats.Total)} h";
+        // A chip shows as selected whenever the range matches it, however it was picked.
+        foreach (var chip in Presets) chip.IsSelected = PresetRange(chip.Key) == (stats.From, stats.To);
 
         var chart = ChartBuilder.Build(_store.Entries, stats.From, stats.To);
         Chart = chart;

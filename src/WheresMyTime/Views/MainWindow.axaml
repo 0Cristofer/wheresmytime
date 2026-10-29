@@ -4,119 +4,143 @@
         x:Class="WheresMyTime.Views.MainWindow"
         x:DataType="vm:MainViewModel"
         Title="{Binding WindowTitle}"
-        Width="440" Height="720" MinWidth="360" MinHeight="460"
+        Width="440" Height="760" MinWidth="380" MinHeight="480"
         WindowStartupLocation="CenterScreen">
-  <DockPanel>
+  <Grid>
+    <DockPanel>
 
-    <!-- Extras -->
-    <Border DockPanel.Dock="Bottom" BorderBrush="{DynamicResource DividerBrush}" BorderThickness="0,1,0,0" Padding="12,10">
-      <Grid ColumnDefinitions="Auto,*,Auto">
-        <StackPanel Orientation="Horizontal" Spacing="6">
-          <Button Content="Stats" Command="{Binding OpenStatsCommand}"
-                  ToolTip.Tip="Time per activity for a date range" />
-          <Button Content="Export" Command="{Binding ExportCommand}"
-                  ToolTip.Tip="Save all entries as a CSV file" />
-          <Button Content="Import" Command="{Binding ImportCommand}"
-                  ToolTip.Tip="Add entries from a CSV file (entries already here are skipped)" />
-        </StackPanel>
-        <TextBlock Grid.Column="1" Classes="muted small" Text="{Binding StatusText}"
-                   VerticalAlignment="Center" HorizontalAlignment="Right" Margin="8,0" TextTrimming="CharacterEllipsis" />
-        <Button Grid.Column="2" Classes="icon" Command="{Binding OpenDataFolderCommand}"
-                ToolTip.Tip="{Binding DataDirectory, StringFormat='Open data folder: {0}'}">
-          <Path Classes="icon" Data="{StaticResource IconFolder}" />
-        </Button>
-      </Grid>
-    </Border>
-
-    <ScrollViewer>
-      <StackPanel Margin="20,16,20,20" Spacing="12">
-
-        <!-- Clock -->
-        <StackPanel HorizontalAlignment="Center">
-          <TextBlock Classes="clock" Text="{Binding ClockTime}" HorizontalAlignment="Center" />
-          <TextBlock Classes="muted" Text="{Binding ClockDate}" HorizontalAlignment="Center" />
-        </StackPanel>
-
-        <!-- What you're doing -->
-        <StackPanel Spacing="8" Margin="0,8,0,0">
-          <AutoCompleteBox x:Name="ActivityBox"
-                           Text="{Binding Activity, Mode=TwoWay}"
-                           ItemsSource="{Binding ActivitySuggestions}"
-                           FilterMode="Contains"
-                           PlaceholderText="Activity — meeting, chat, project…" />
-          <AutoCompleteBox x:Name="DetailsBox"
-                           Text="{Binding Details, Mode=TwoWay}"
-                           ItemsSource="{Binding DetailSuggestions}"
-                           FilterMode="Contains"
-                           PlaceholderText="Details (optional)" />
-        </StackPanel>
-
-        <Button Classes="timer" Classes.start="{Binding !IsRunning}" Classes.stop="{Binding IsRunning}"
-                Command="{Binding StartStopCommand}" Content="{Binding StartStopText}" />
-        <TextBlock Classes="muted small" Text="{Binding RunningInfo}" IsVisible="{Binding IsRunning}"
-                   HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" />
-
-        <!-- Day log -->
-        <Grid ColumnDefinitions="Auto,*,Auto" Margin="0,14,0,0">
-          <Button Classes="icon" Command="{Binding PreviousDayCommand}" ToolTip.Tip="Previous day">
-            <Path Classes="icon" Data="{StaticResource IconPrevious}" />
-          </Button>
-          <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="10"
-                      HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="{Binding DayTitle}" FontWeight="SemiBold" />
-            <TextBlock Classes="muted tabular" Text="{Binding DayTotal}" />
+      <!-- Bottom app bar with the extras. -->
+      <Border DockPanel.Dock="Bottom" Background="{DynamicResource SurfaceContainer}" Padding="16,12">
+        <Grid ColumnDefinitions="Auto,*,Auto">
+          <StackPanel Orientation="Horizontal" Spacing="4">
+            <Button Classes="tonal" Content="Stats" Command="{Binding OpenStatsCommand}"
+                    ToolTip.Tip="Time per activity for a date range" />
+            <Button Classes="text" Content="Export" Command="{Binding ExportCommand}"
+                    ToolTip.Tip="Save all entries as a CSV file" />
+            <Button Classes="text" Content="Import" Command="{Binding ImportCommand}"
+                    ToolTip.Tip="Add entries from a CSV file (entries already here are skipped)" />
           </StackPanel>
-          <Button Grid.Column="2" Classes="icon" Command="{Binding NextDayCommand}" ToolTip.Tip="Next day">
-            <Path Classes="icon" Data="{StaticResource IconNext}" />
+          <Button Grid.Column="2" Classes="icon" Command="{Binding OpenDataFolderCommand}"
+                  ToolTip.Tip="{Binding DataDirectory, StringFormat='Open data folder: {0}'}">
+            <Path Classes="icon" Data="{StaticResource IconFolder}" />
           </Button>
         </Grid>
-        <Button Content="Back to today" Command="{Binding GoToTodayCommand}" IsVisible="{Binding !IsToday}"
-                HorizontalAlignment="Center" />
+      </Border>
 
-        <ItemsControl ItemsSource="{Binding DayEntries}">
-          <ItemsControl.ItemsPanel>
-            <ItemsPanelTemplate>
-              <StackPanel Spacing="6" />
-            </ItemsPanelTemplate>
-          </ItemsControl.ItemsPanel>
-          <ItemsControl.ItemTemplate>
-            <DataTemplate x:DataType="vm:EntryRow">
-              <Border Classes="card" DoubleTapped="OnEntryDoubleTapped">
-                <Grid ColumnDefinitions="92,*,Auto">
-                  <StackPanel VerticalAlignment="Center">
-                    <TextBlock Classes="tabular" Text="{Binding TimeRange}" />
-                    <TextBlock Classes="muted small tabular" Text="{Binding DurationText}" />
-                  </StackPanel>
-                  <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="4,0,4,0">
-                    <TextBlock Text="{Binding Activity}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
-                    <TextBlock Classes="muted small" Text="{Binding Details}" IsVisible="{Binding HasDetails}"
-                               TextTrimming="CharacterEllipsis" />
-                  </StackPanel>
-                  <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
-                    <Button Classes="icon" ToolTip.Tip="Copy to clipboard" CommandParameter="{Binding}"
-                            Command="{Binding $parent[ItemsControl].((vm:MainViewModel)DataContext).CopyEntryCommand}">
-                      <Path Classes="icon" Data="{StaticResource IconCopy}" />
-                    </Button>
-                    <Button Classes="icon" ToolTip.Tip="Edit" CommandParameter="{Binding}"
-                            Command="{Binding $parent[ItemsControl].((vm:MainViewModel)DataContext).EditEntryCommand}">
-                      <Path Classes="icon" Data="{StaticResource IconEdit}" />
-                    </Button>
-                    <Button Classes="icon" ToolTip.Tip="Delete" CommandParameter="{Binding}"
-                            Command="{Binding $parent[ItemsControl].((vm:MainViewModel)DataContext).DeleteEntryCommand}">
-                      <Path Classes="icon" Data="{StaticResource IconDelete}" />
-                    </Button>
-                  </StackPanel>
-                </Grid>
-              </Border>
-            </DataTemplate>
-          </ItemsControl.ItemTemplate>
-        </ItemsControl>
+      <ScrollViewer>
+        <StackPanel Margin="24,20,24,24" Spacing="16">
 
-        <TextBlock Classes="muted" Text="Nothing recorded on this day." IsVisible="{Binding !HasDayEntries}"
-                   HorizontalAlignment="Center" Margin="0,6" />
-        <Button Content="+ Add entry by hand" Command="{Binding AddEntryCommand}" HorizontalAlignment="Center" />
+          <!-- Clock -->
+          <StackPanel HorizontalAlignment="Center" Margin="0,4,0,4">
+            <TextBlock Classes="display" Text="{Binding ClockTime}" HorizontalAlignment="Center" />
+            <TextBlock Classes="body-large muted" Text="{Binding ClockDate}" HorizontalAlignment="Center" />
+          </StackPanel>
 
-      </StackPanel>
-    </ScrollViewer>
-  </DockPanel>
+          <!-- What you're doing -->
+          <StackPanel Spacing="12">
+            <AutoCompleteBox x:Name="ActivityBox"
+                             Text="{Binding Activity, Mode=TwoWay}"
+                             ItemsSource="{Binding ActivitySuggestions}"
+                             FilterMode="Contains"
+                             PlaceholderText="Activity" />
+            <AutoCompleteBox x:Name="DetailsBox"
+                             Text="{Binding Details, Mode=TwoWay}"
+                             ItemsSource="{Binding DetailSuggestions}"
+                             FilterMode="Contains"
+                             PlaceholderText="Details (optional)" />
+          </StackPanel>
+
+          <StackPanel Spacing="8">
+            <Button Classes="timer" Classes.start="{Binding !IsRunning}" Classes.stop="{Binding IsRunning}"
+                    Command="{Binding StartStopCommand}">
+              <StackPanel Orientation="Horizontal" Spacing="12">
+                <Panel Width="24" Height="24">
+                  <Path Classes="icon-filled" Data="{StaticResource IconPlay}" IsVisible="{Binding !IsRunning}" />
+                  <Path Classes="icon-filled" Data="{StaticResource IconStop}" IsVisible="{Binding IsRunning}" />
+                </Panel>
+                <TextBlock Text="{Binding StartStopText}" VerticalAlignment="Center" />
+              </StackPanel>
+            </Button>
+            <TextBlock Classes="body-small muted" Text="{Binding RunningInfo}" IsVisible="{Binding IsRunning}"
+                       HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" />
+          </StackPanel>
+
+          <!-- Day log -->
+          <StackPanel Spacing="8" Margin="0,8,0,0">
+            <Grid ColumnDefinitions="Auto,*,Auto">
+              <Button Classes="icon" Command="{Binding PreviousDayCommand}" ToolTip.Tip="Previous day">
+                <Path Classes="icon" Data="{StaticResource IconPrevious}" />
+              </Button>
+              <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="10"
+                          HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Classes="title" Text="{Binding DayTitle}" />
+                <TextBlock Classes="title muted tabular" Text="{Binding DayTotal}" FontWeight="Normal" />
+              </StackPanel>
+              <Button Grid.Column="2" Classes="icon" Command="{Binding NextDayCommand}" ToolTip.Tip="Next day">
+                <Path Classes="icon" Data="{StaticResource IconNext}" />
+              </Button>
+            </Grid>
+            <Button Classes="text" Content="Back to today" Command="{Binding GoToTodayCommand}" IsVisible="{Binding !IsToday}"
+                    HorizontalAlignment="Center" />
+
+            <ItemsControl ItemsSource="{Binding DayEntries}">
+              <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                  <StackPanel Spacing="8" />
+                </ItemsPanelTemplate>
+              </ItemsControl.ItemsPanel>
+              <ItemsControl.ItemTemplate>
+                <DataTemplate x:DataType="vm:EntryRow">
+                  <Border Classes="card" DoubleTapped="OnEntryDoubleTapped">
+                    <Grid ColumnDefinitions="96,*,Auto">
+                      <StackPanel VerticalAlignment="Center">
+                        <TextBlock Classes="tabular" Text="{Binding TimeRange}" />
+                        <TextBlock Classes="body-small muted tabular" Text="{Binding DurationText}" />
+                      </StackPanel>
+                      <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="4,0">
+                        <TextBlock Classes="title-small" Text="{Binding Activity}" TextTrimming="CharacterEllipsis" />
+                        <TextBlock Classes="body-small muted" Text="{Binding Details}" IsVisible="{Binding HasDetails}"
+                                   TextTrimming="CharacterEllipsis" />
+                      </StackPanel>
+                      <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                        <Button Classes="icon" ToolTip.Tip="Copy to clipboard" CommandParameter="{Binding}"
+                                Command="{Binding $parent[ItemsControl].((vm:MainViewModel)DataContext).CopyEntryCommand}">
+                          <Path Classes="icon" Data="{StaticResource IconCopy}" />
+                        </Button>
+                        <Button Classes="icon" ToolTip.Tip="Edit" CommandParameter="{Binding}"
+                                Command="{Binding $parent[ItemsControl].((vm:MainViewModel)DataContext).EditEntryCommand}">
+                          <Path Classes="icon" Data="{StaticResource IconEdit}" />
+                        </Button>
+                        <Button Classes="icon" ToolTip.Tip="Delete" CommandParameter="{Binding}"
+                                Command="{Binding $parent[ItemsControl].((vm:MainViewModel)DataContext).DeleteEntryCommand}">
+                          <Path Classes="icon" Data="{StaticResource IconDelete}" />
+                        </Button>
+                      </StackPanel>
+                    </Grid>
+                  </Border>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <TextBlock Classes="muted" Text="Nothing recorded on this day." IsVisible="{Binding !HasDayEntries}"
+                       HorizontalAlignment="Center" Margin="0,8" />
+            <Button Classes="outlined" Command="{Binding AddEntryCommand}" HorizontalAlignment="Center" Margin="0,4,0,0"
+                    Padding="16,0,24,0">
+              <StackPanel Orientation="Horizontal" Spacing="8">
+                <Path Classes="icon" Data="{StaticResource IconAdd}" Width="18" Height="18" />
+                <TextBlock Text="Add entry by hand" VerticalAlignment="Center" />
+              </StackPanel>
+            </Button>
+          </StackPanel>
+
+        </StackPanel>
+      </ScrollViewer>
+    </DockPanel>
+
+    <!-- Snackbar for short confirmations ("Copied to clipboard"). -->
+    <Border Classes="snackbar" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="16,0,16,80"
+            IsVisible="{Binding StatusText, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+      <TextBlock Text="{Binding StatusText}" TextWrapping="Wrap" />
+    </Border>
+  </Grid>
 </Window>

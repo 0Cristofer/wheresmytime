@@ -1,25 +1,116 @@
-﻿<Application xmlns="https://github.com/avaloniaui"
+<Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="WheresMyTime.App"
              RequestedThemeVariant="Default">
+  <!--
+    Material 3 styling on top of the Fluent theme.
+    Colour roles follow the Material 3 tone mapping from the seed #1F8A4C (the Start-button
+    green): each role is that hue at a fixed lightness, light and dark mode alike. The *Hover /
+    *Pressed / *State* brushes are Material's state layers (8% / 10% of the content colour)
+    precomputed over their container.
+  -->
   <Application.Resources>
     <ResourceDictionary>
       <ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary x:Key="Light">
-          <SolidColorBrush x:Key="CardBrush" Color="#F2F3F5" />
-          <SolidColorBrush x:Key="DividerBrush" Color="#E3E5E8" />
-          <SolidColorBrush x:Key="IconBrush" Color="#4B5563" />
-          <SolidColorBrush x:Key="ErrorBrush" Color="#B42318" />
-          <SolidColorBrush x:Key="WarningBrush" Color="#B54708" />
+          <SolidColorBrush x:Key="Primary" Color="#186C3B" />
+          <SolidColorBrush x:Key="OnPrimary" Color="#FFFFFF" />
+          <SolidColorBrush x:Key="PrimaryContainer" Color="#A3F4BA" />
+          <SolidColorBrush x:Key="OnPrimaryContainer" Color="#00210A" />
+          <SolidColorBrush x:Key="Secondary" Color="#48654F" />
+          <SolidColorBrush x:Key="OnSecondary" Color="#FFFFFF" />
+          <SolidColorBrush x:Key="SecondaryContainer" Color="#C9EBD1" />
+          <SolidColorBrush x:Key="OnSecondaryContainer" Color="#05210E" />
+          <SolidColorBrush x:Key="Tertiary" Color="#006972" />
+          <SolidColorBrush x:Key="OnTertiary" Color="#FFFFFF" />
+          <SolidColorBrush x:Key="TertiaryContainer" Color="#8FF2FE" />
+          <SolidColorBrush x:Key="OnTertiaryContainer" Color="#002023" />
+          <SolidColorBrush x:Key="Error" Color="#BA1A1A" />
+          <SolidColorBrush x:Key="OnError" Color="#FFFFFF" />
+          <SolidColorBrush x:Key="ErrorContainer" Color="#FFDAD6" />
+          <SolidColorBrush x:Key="OnErrorContainer" Color="#410002" />
+          <SolidColorBrush x:Key="Surface" Color="#F4FBF5" />
+          <SolidColorBrush x:Key="OnSurface" Color="#181D19" />
+          <SolidColorBrush x:Key="OnSurfaceVariant" Color="#3C4A40" />
+          <SolidColorBrush x:Key="Outline" Color="#6C7B6F" />
+          <SolidColorBrush x:Key="OutlineVariant" Color="#BACBBE" />
+          <SolidColorBrush x:Key="InverseSurface" Color="#2C322D" />
+          <SolidColorBrush x:Key="InverseOnSurface" Color="#EBF3ED" />
+          <SolidColorBrush x:Key="InversePrimary" Color="#88D89E" />
+          <SolidColorBrush x:Key="SurfaceContainerLowest" Color="#FFFFFF" />
+          <SolidColorBrush x:Key="SurfaceContainerLow" Color="#EEF5F0" />
+          <SolidColorBrush x:Key="SurfaceContainer" Color="#E8F0EA" />
+          <SolidColorBrush x:Key="SurfaceContainerHigh" Color="#E3EAE4" />
+          <SolidColorBrush x:Key="SurfaceContainerHighest" Color="#DDE4DE" />
+          <SolidColorBrush x:Key="PrimaryHover" Color="#2A784B" />
+          <SolidColorBrush x:Key="PrimaryPressed" Color="#2F7B4F" />
+          <SolidColorBrush x:Key="SecondaryContainerHover" Color="#B9DBC1" />
+          <SolidColorBrush x:Key="SecondaryContainerPressed" Color="#B5D7BE" />
+          <SolidColorBrush x:Key="ErrorHover" Color="#C02C2C" />
+          <SolidColorBrush x:Key="ErrorPressed" Color="#C13131" />
+          <SolidColorBrush x:Key="SurfaceContainerHighestHover" Color="#CDD4CE" />
+          <SolidColorBrush x:Key="PrimaryStateHover" Color="#14186C3B" />
+          <SolidColorBrush x:Key="PrimaryStatePressed" Color="#1A186C3B" />
+          <SolidColorBrush x:Key="ErrorStateHover" Color="#14BA1A1A" />
+          <SolidColorBrush x:Key="ErrorStatePressed" Color="#1ABA1A1A" />
+          <SolidColorBrush x:Key="OnSurfaceStateHover" Color="#14181D19" />
+          <SolidColorBrush x:Key="OnSurfaceStatePressed" Color="#1A181D19" />
+          <SolidColorBrush x:Key="OnSurfaceDisabled" Color="#61181D19" />
+          <SolidColorBrush x:Key="OnSurfaceDisabledContainer" Color="#1F181D19" />
+          <SolidColorBrush x:Key="Warning" Color="#8C5000" />
         </ResourceDictionary>
         <ResourceDictionary x:Key="Dark">
-          <SolidColorBrush x:Key="CardBrush" Color="#2A2D33" />
-          <SolidColorBrush x:Key="DividerBrush" Color="#3A3D44" />
-          <SolidColorBrush x:Key="IconBrush" Color="#C9CDD4" />
-          <SolidColorBrush x:Key="ErrorBrush" Color="#F97066" />
-          <SolidColorBrush x:Key="WarningBrush" Color="#FDB022" />
+          <SolidColorBrush x:Key="Primary" Color="#88D89E" />
+          <SolidColorBrush x:Key="OnPrimary" Color="#003919" />
+          <SolidColorBrush x:Key="PrimaryContainer" Color="#005228" />
+          <SolidColorBrush x:Key="OnPrimaryContainer" Color="#A3F4BA" />
+          <SolidColorBrush x:Key="Secondary" Color="#AECEB5" />
+          <SolidColorBrush x:Key="OnSecondary" Color="#1B3623" />
+          <SolidColorBrush x:Key="SecondaryContainer" Color="#314D38" />
+          <SolidColorBrush x:Key="OnSecondaryContainer" Color="#C9EBD1" />
+          <SolidColorBrush x:Key="Tertiary" Color="#71D5E2" />
+          <SolidColorBrush x:Key="OnTertiary" Color="#00363C" />
+          <SolidColorBrush x:Key="TertiaryContainer" Color="#004F56" />
+          <SolidColorBrush x:Key="OnTertiaryContainer" Color="#8FF2FE" />
+          <SolidColorBrush x:Key="Error" Color="#FFB4AB" />
+          <SolidColorBrush x:Key="OnError" Color="#690005" />
+          <SolidColorBrush x:Key="ErrorContainer" Color="#93000A" />
+          <SolidColorBrush x:Key="OnErrorContainer" Color="#FFDAD6" />
+          <SolidColorBrush x:Key="Surface" Color="#0E1510" />
+          <SolidColorBrush x:Key="OnSurface" Color="#DDE4DE" />
+          <SolidColorBrush x:Key="OnSurfaceVariant" Color="#BACBBE" />
+          <SolidColorBrush x:Key="Outline" Color="#859489" />
+          <SolidColorBrush x:Key="OutlineVariant" Color="#3C4A40" />
+          <SolidColorBrush x:Key="InverseSurface" Color="#DDE4DE" />
+          <SolidColorBrush x:Key="InverseOnSurface" Color="#2C322D" />
+          <SolidColorBrush x:Key="InversePrimary" Color="#186C3B" />
+          <SolidColorBrush x:Key="SurfaceContainerLowest" Color="#08100A" />
+          <SolidColorBrush x:Key="SurfaceContainerLow" Color="#181D19" />
+          <SolidColorBrush x:Key="SurfaceContainer" Color="#1C211D" />
+          <SolidColorBrush x:Key="SurfaceContainerHigh" Color="#262B27" />
+          <SolidColorBrush x:Key="SurfaceContainerHighest" Color="#303632" />
+          <SolidColorBrush x:Key="PrimaryHover" Color="#7DCB93" />
+          <SolidColorBrush x:Key="PrimaryPressed" Color="#7AC891" />
+          <SolidColorBrush x:Key="SecondaryContainerHover" Color="#3D5A44" />
+          <SolidColorBrush x:Key="SecondaryContainerPressed" Color="#405D47" />
+          <SolidColorBrush x:Key="ErrorHover" Color="#F3A69E" />
+          <SolidColorBrush x:Key="ErrorPressed" Color="#F0A29A" />
+          <SolidColorBrush x:Key="SurfaceContainerHighestHover" Color="#3E4440" />
+          <SolidColorBrush x:Key="PrimaryStateHover" Color="#1488D89E" />
+          <SolidColorBrush x:Key="PrimaryStatePressed" Color="#1A88D89E" />
+          <SolidColorBrush x:Key="ErrorStateHover" Color="#14FFB4AB" />
+          <SolidColorBrush x:Key="ErrorStatePressed" Color="#1AFFB4AB" />
+          <SolidColorBrush x:Key="OnSurfaceStateHover" Color="#14DDE4DE" />
+          <SolidColorBrush x:Key="OnSurfaceStatePressed" Color="#1ADDE4DE" />
+          <SolidColorBrush x:Key="OnSurfaceDisabled" Color="#61DDE4DE" />
+          <SolidColorBrush x:Key="OnSurfaceDisabledContainer" Color="#1FDDE4DE" />
+          <SolidColorBrush x:Key="Warning" Color="#FFB95C" />
         </ResourceDictionary>
       </ResourceDictionary.ThemeDictionaries>
+
+      <!-- Material elevation levels 1 and 3. -->
+      <BoxShadows x:Key="Elevation1">0 1 2 0 #4D000000, 0 1 3 1 #26000000</BoxShadows>
+      <BoxShadows x:Key="Elevation3">0 1 3 0 #4D000000, 0 4 8 3 #26000000</BoxShadows>
 
       <!-- Stroked icons on a 24x24 grid. -->
       <StreamGeometry x:Key="IconCopy">M9,9 H20 V20 H9 Z M5,15 H4 V4 H15 V5</StreamGeometry>
@@ -28,95 +119,337 @@
       <StreamGeometry x:Key="IconPrevious">M15,5 L8,12 L15,19</StreamGeometry>
       <StreamGeometry x:Key="IconNext">M9,5 L16,12 L9,19</StreamGeometry>
       <StreamGeometry x:Key="IconFolder">M3,6 H9 L11,8 H21 V19 H3 Z</StreamGeometry>
+      <StreamGeometry x:Key="IconAdd">M12,5 V19 M5,12 H19</StreamGeometry>
+      <StreamGeometry x:Key="IconCheck">M5,12.5 L10,17.5 L19,7</StreamGeometry>
+      <StreamGeometry x:Key="IconToday">M5,12 H19 M12,5 L19,12 L12,19</StreamGeometry>
+      <!-- Filled icons. -->
+      <StreamGeometry x:Key="IconPlay">M8,5.5 C8,4.7 8.9,4.2 9.6,4.7 L19,11.2 C19.6,11.6 19.6,12.4 19,12.8 L9.6,19.3 C8.9,19.8 8,19.3 8,18.5 Z</StreamGeometry>
+      <StreamGeometry x:Key="IconStop">M7,6 H17 C17.6,6 18,6.4 18,7 V17 C18,17.6 17.6,18 17,18 H7 C6.4,18 6,17.6 6,17 V7 C6,6.4 6.4,6 7,6 Z</StreamGeometry>
     </ResourceDictionary>
   </Application.Resources>
 
   <Application.Styles>
-    <FluentTheme />
+    <FluentTheme>
+      <!-- Fluent's own controls (checkboxes, popups, date picker, scrollbars) pick up the scheme too. -->
+      <FluentTheme.Palettes>
+        <ColorPaletteResources x:Key="Light" Accent="#186C3B" RegionColor="#F4FBF5" BaseHigh="#181D19"
+                               ChromeMediumLow="#E8F0EA" ChromeLow="#EEF5F0" ChromeMedium="#E3EAE4" ErrorText="#BA1A1A" />
+        <ColorPaletteResources x:Key="Dark" Accent="#88D89E" RegionColor="#0E1510" BaseHigh="#DDE4DE"
+                               ChromeMediumLow="#1C211D" ChromeLow="#181D19" ChromeMedium="#262B27" ErrorText="#FFB4AB" />
+      </FluentTheme.Palettes>
+    </FluentTheme>
 
-    <!-- Every window, dialogs included, shows the app icon. -->
+    <!-- Windows: the app icon and the Material surface. Dialogs sit one container level up. -->
     <Style Selector=":is(Window)">
       <Setter Property="Icon" Value="/Assets/icon.ico" />
+      <Setter Property="Background" Value="{DynamicResource Surface}" />
+      <Setter Property="Foreground" Value="{DynamicResource OnSurface}" />
+    </Style>
+    <Style Selector=":is(Window).dialog">
+      <Setter Property="Background" Value="{DynamicResource SurfaceContainerHigh}" />
     </Style>
 
-    <Style Selector="TextBlock.muted">
-      <Setter Property="Opacity" Value="0.65" />
+    <!-- Type scale (Material 3 sizes, in the app's Inter font). -->
+    <Style Selector="TextBlock.display">
+      <Setter Property="FontSize" Value="57" />
+      <Setter Property="LineHeight" Value="64" />
+      <Setter Property="FontFeatures" Value="+tnum" />
     </Style>
-    <Style Selector="TextBlock.small">
+    <Style Selector="TextBlock.headline">
+      <Setter Property="FontSize" Value="32" />
+      <Setter Property="LineHeight" Value="40" />
+    </Style>
+    <Style Selector="TextBlock.headline-small">
+      <Setter Property="FontSize" Value="24" />
+      <Setter Property="LineHeight" Value="32" />
+    </Style>
+    <Style Selector="TextBlock.title">
+      <Setter Property="FontSize" Value="16" />
+      <Setter Property="FontWeight" Value="Medium" />
+    </Style>
+    <Style Selector="TextBlock.title-small">
+      <Setter Property="FontSize" Value="14" />
+      <Setter Property="FontWeight" Value="Medium" />
+    </Style>
+    <Style Selector="TextBlock.body-large">
+      <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style Selector="TextBlock.body-small">
       <Setter Property="FontSize" Value="12" />
     </Style>
     <Style Selector="TextBlock.label">
       <Setter Property="FontSize" Value="12" />
-      <Setter Property="Opacity" Value="0.75" />
+      <Setter Property="FontWeight" Value="Medium" />
     </Style>
-    <Style Selector="TextBlock.clock">
-      <Setter Property="FontSize" Value="56" />
-      <Setter Property="FontWeight" Value="Light" />
-      <Setter Property="FontFeatures" Value="+tnum" />
+    <Style Selector="TextBlock.muted">
+      <Setter Property="Foreground" Value="{DynamicResource OnSurfaceVariant}" />
     </Style>
     <Style Selector="TextBlock.tabular">
       <Setter Property="FontFeatures" Value="+tnum" />
     </Style>
 
-    <Style Selector="Border.card">
-      <Setter Property="Background" Value="{DynamicResource CardBrush}" />
-      <Setter Property="CornerRadius" Value="8" />
-      <Setter Property="Padding" Value="12,6,4,6" />
+    <!-- Common buttons: text, outlined, tonal and filled. All are 40px pills. -->
+    <Style Selector="Button.text, Button.outlined, Button.tonal, Button.filled">
+      <Setter Property="MinHeight" Value="40" />
+      <Setter Property="Padding" Value="24,0" />
+      <Setter Property="CornerRadius" Value="20" />
+      <Setter Property="FontSize" Value="14" />
+      <Setter Property="FontWeight" Value="Medium" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Foreground" Value="{DynamicResource Primary}" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Button.text">
+      <Setter Property="Padding" Value="12,0" />
+    </Style>
+    <Style Selector="Button.outlined">
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="BorderBrush" Value="{DynamicResource Outline}" />
+    </Style>
+    <Style Selector="Button.tonal">
+      <Setter Property="Background" Value="{DynamicResource SecondaryContainer}" />
+      <Setter Property="Foreground" Value="{DynamicResource OnSecondaryContainer}" />
+    </Style>
+    <Style Selector="Button.filled">
+      <Setter Property="Background" Value="{DynamicResource Primary}" />
+      <Setter Property="Foreground" Value="{DynamicResource OnPrimary}" />
+    </Style>
+    <Style Selector="Button.danger">
+      <Setter Property="Foreground" Value="{DynamicResource Error}" />
     </Style>
 
+    <!-- Icon buttons: 40px circles. Icons take the button's text colour. -->
+    <Style Selector="Button.icon">
+      <Setter Property="Width" Value="40" />
+      <Setter Property="Height" Value="40" />
+      <Setter Property="Padding" Value="10" />
+      <Setter Property="CornerRadius" Value="20" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Foreground" Value="{DynamicResource OnSurfaceVariant}" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
     <Style Selector="Path.icon">
-      <Setter Property="Width" Value="16" />
-      <Setter Property="Height" Value="16" />
+      <Setter Property="Width" Value="20" />
+      <Setter Property="Height" Value="20" />
       <Setter Property="Stretch" Value="Uniform" />
-      <Setter Property="Stroke" Value="{DynamicResource IconBrush}" />
-      <Setter Property="StrokeThickness" Value="1.6" />
+      <!-- The text colour the button's presenter passes down, so icons follow hover and disabled states. -->
+      <Setter Property="Stroke" Value="{Binding $self.(TextElement.Foreground)}" />
+      <Setter Property="StrokeThickness" Value="1.8" />
       <Setter Property="StrokeLineCap" Value="Round" />
       <Setter Property="StrokeJoin" Value="Round" />
     </Style>
-    <Style Selector="Button.icon">
-      <Setter Property="Background" Value="Transparent" />
-      <Setter Property="BorderThickness" Value="0" />
-      <Setter Property="Padding" Value="7" />
-    </Style>
-    <Style Selector="Button.icon:disabled /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="Transparent" />
-    </Style>
-    <Style Selector="Button.icon:disabled Path.icon">
-      <Setter Property="Opacity" Value="0.3" />
+    <Style Selector="Path.icon-filled">
+      <Setter Property="Width" Value="24" />
+      <Setter Property="Height" Value="24" />
+      <Setter Property="Stretch" Value="Uniform" />
+      <Setter Property="Fill" Value="{Binding $self.(TextElement.Foreground)}" />
     </Style>
 
-    <!-- The big start/stop button: green when idle, red while the timer runs. -->
+    <!-- Filter chips: 32px, outlined; selected ones fill with the secondary container. -->
+    <Style Selector="Button.chip">
+      <Setter Property="MinHeight" Value="32" />
+      <Setter Property="Padding" Value="16,0" />
+      <Setter Property="CornerRadius" Value="8" />
+      <Setter Property="FontSize" Value="14" />
+      <Setter Property="FontWeight" Value="Medium" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="BorderBrush" Value="{DynamicResource OutlineVariant}" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Foreground" Value="{DynamicResource OnSurfaceVariant}" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Button.chip.selected">
+      <Setter Property="Padding" Value="8,0,16,0" />
+      <Setter Property="BorderBrush" Value="{DynamicResource SecondaryContainer}" />
+      <Setter Property="Background" Value="{DynamicResource SecondaryContainer}" />
+      <Setter Property="Foreground" Value="{DynamicResource OnSecondaryContainer}" />
+    </Style>
+
+    <!-- The start/stop button, shaped like an extended floating action button. -->
     <Style Selector="Button.timer">
       <Setter Property="HorizontalAlignment" Value="Stretch" />
       <Setter Property="HorizontalContentAlignment" Value="Center" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
-      <Setter Property="Height" Value="54" />
-      <Setter Property="FontSize" Value="20" />
+      <Setter Property="Height" Value="56" />
+      <Setter Property="Padding" Value="24,0" />
+      <Setter Property="CornerRadius" Value="16" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="FontSize" Value="16" />
+      <Setter Property="FontWeight" Value="Medium" />
       <Setter Property="FontFeatures" Value="+tnum" />
-      <Setter Property="CornerRadius" Value="10" />
-      <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style Selector="Button.timer /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="BoxShadow" Value="{DynamicResource Elevation3}" />
     </Style>
     <Style Selector="Button.timer.start">
-      <Setter Property="Background" Value="#1F8A4C" />
-    </Style>
-    <Style Selector="Button.timer.start:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="#23A059" />
-      <Setter Property="Foreground" Value="White" />
-    </Style>
-    <Style Selector="Button.timer.start:pressed /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="#1A7541" />
-      <Setter Property="Foreground" Value="White" />
+      <Setter Property="Background" Value="{DynamicResource Primary}" />
+      <Setter Property="Foreground" Value="{DynamicResource OnPrimary}" />
     </Style>
     <Style Selector="Button.timer.stop">
-      <Setter Property="Background" Value="#C53030" />
+      <Setter Property="Background" Value="{DynamicResource Error}" />
+      <Setter Property="Foreground" Value="{DynamicResource OnError}" />
+    </Style>
+
+    <!-- State layers. Fluent recolours the presenter on hover and press; keep each button's own
+         text and border colour and lay the Material state colour over its container instead. -->
+    <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter, Button:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Foreground" Value="{Binding $parent[Button].Foreground}" />
+      <Setter Property="BorderBrush" Value="{Binding $parent[Button].BorderBrush}" />
+    </Style>
+    <Style Selector="Button.text:pointerover /template/ ContentPresenter#PART_ContentPresenter, Button.outlined:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource PrimaryStateHover}" />
+    </Style>
+    <Style Selector="Button.text:pressed /template/ ContentPresenter#PART_ContentPresenter, Button.outlined:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource PrimaryStatePressed}" />
+    </Style>
+    <Style Selector="Button.danger:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ErrorStateHover}" />
+    </Style>
+    <Style Selector="Button.danger:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ErrorStatePressed}" />
+    </Style>
+    <Style Selector="Button.icon:pointerover /template/ ContentPresenter#PART_ContentPresenter, Button.chip:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource OnSurfaceStateHover}" />
+    </Style>
+    <Style Selector="Button.icon:pressed /template/ ContentPresenter#PART_ContentPresenter, Button.chip:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource OnSurfaceStatePressed}" />
+    </Style>
+    <Style Selector="Button.tonal:pointerover /template/ ContentPresenter#PART_ContentPresenter, Button.chip.selected:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource SecondaryContainerHover}" />
+    </Style>
+    <Style Selector="Button.tonal:pressed /template/ ContentPresenter#PART_ContentPresenter, Button.chip.selected:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource SecondaryContainerPressed}" />
+    </Style>
+    <Style Selector="Button.filled:pointerover /template/ ContentPresenter#PART_ContentPresenter, Button.timer.start:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource PrimaryHover}" />
+    </Style>
+    <Style Selector="Button.filled:pressed /template/ ContentPresenter#PART_ContentPresenter, Button.timer.start:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource PrimaryPressed}" />
     </Style>
     <Style Selector="Button.timer.stop:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="#D63E3E" />
-      <Setter Property="Foreground" Value="White" />
+      <Setter Property="Background" Value="{DynamicResource ErrorHover}" />
     </Style>
     <Style Selector="Button.timer.stop:pressed /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="#A82828" />
-      <Setter Property="Foreground" Value="White" />
+      <Setter Property="Background" Value="{DynamicResource ErrorPressed}" />
+    </Style>
+
+    <!-- Disabled: 38% text, and a 12% container for buttons that have one. -->
+    <Style Selector="Button:disabled /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Foreground" Value="{DynamicResource OnSurfaceDisabled}" />
+    </Style>
+    <Style Selector="Button.text:disabled /template/ ContentPresenter#PART_ContentPresenter, Button.icon:disabled /template/ ContentPresenter#PART_ContentPresenter, Button.chip:disabled /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="Button.outlined:disabled /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderBrush" Value="{DynamicResource OnSurfaceDisabledContainer}" />
+    </Style>
+    <Style Selector="Button.filled:disabled /template/ ContentPresenter#PART_ContentPresenter, Button.tonal:disabled /template/ ContentPresenter#PART_ContentPresenter, Button.timer:disabled /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource OnSurfaceDisabledContainer}" />
+      <Setter Property="BoxShadow" Value="0 0 0 0 #00000000" />
+    </Style>
+
+    <!-- Filled text fields: tinted container, underline that turns into a 2px primary
+         indicator on focus, and the placeholder floating up as a label once there's text. -->
+    <Style Selector="TextBox, AutoCompleteBox, CalendarDatePicker">
+      <Setter Property="MinHeight" Value="56" />
+      <Setter Property="FontSize" Value="16" />
+      <Setter Property="Padding" Value="16,6,16,6" />
+      <Setter Property="CornerRadius" Value="4,4,0,0" />
+      <Setter Property="BorderThickness" Value="0,0,0,1" />
+      <Setter Property="Background" Value="{DynamicResource SurfaceContainerHighest}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource OnSurfaceVariant}" />
+      <Setter Property="Foreground" Value="{DynamicResource OnSurface}" />
+    </Style>
+    <Style Selector="TextBox">
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="UseFloatingPlaceholder" Value="True" />
+      <Setter Property="CaretBrush" Value="{DynamicResource Primary}" />
+      <Setter Property="SelectionBrush" Value="{DynamicResource PrimaryContainer}" />
+      <Setter Property="SelectionForegroundBrush" Value="{DynamicResource OnPrimaryContainer}" />
+    </Style>
+    <Style Selector="CalendarDatePicker">
+      <Setter Property="UseFloatingPlaceholder" Value="True" />
+    </Style>
+    <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
+      <Setter Property="Background" Value="{DynamicResource SurfaceContainerHighestHover}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource OnSurface}" />
+    </Style>
+    <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
+      <Setter Property="Background" Value="{DynamicResource SurfaceContainerHighest}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource Primary}" />
+      <Setter Property="BorderThickness" Value="0,0,0,2" />
+    </Style>
+    <Style Selector="TextBox /template/ TextBlock#PART_Placeholder">
+      <Setter Property="Foreground" Value="{DynamicResource OnSurfaceVariant}" />
+    </Style>
+    <Style Selector="TextBox /template/ TextBlock#PART_FloatingPlaceholder">
+      <Setter Property="FontSize" Value="12" />
+      <Setter Property="Foreground" Value="{DynamicResource OnSurfaceVariant}" />
+    </Style>
+    <Style Selector="TextBox:focus /template/ TextBlock#PART_FloatingPlaceholder">
+      <Setter Property="Foreground" Value="{DynamicResource Primary}" />
+    </Style>
+
+    <!-- Primary tabs: label in primary when selected, with a 3px rounded indicator. -->
+    <Style Selector="TabItem">
+      <Setter Property="FontSize" Value="14" />
+      <Setter Property="FontWeight" Value="Medium" />
+      <Setter Property="MinHeight" Value="48" />
+      <Setter Property="Padding" Value="16,0" />
+      <Setter Property="Foreground" Value="{DynamicResource OnSurfaceVariant}" />
+    </Style>
+    <Style Selector="TabItem /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Foreground" Value="{Binding $parent[TabItem].Foreground}" />
+    </Style>
+    <Style Selector="TabItem:pointerover">
+      <Setter Property="Foreground" Value="{DynamicResource OnSurface}" />
+    </Style>
+    <Style Selector="TabItem:selected">
+      <Setter Property="Foreground" Value="{DynamicResource Primary}" />
+    </Style>
+    <Style Selector="TabItem /template/ Border#PART_SelectedPipe">
+      <Setter Property="Background" Value="{DynamicResource Primary}" />
+      <Setter Property="Height" Value="3" />
+      <Setter Property="CornerRadius" Value="3,3,0,0" />
+    </Style>
+
+    <!-- Linear progress: primary indicator on a secondary-container track. -->
+    <Style Selector="ProgressBar">
+      <Setter Property="Foreground" Value="{DynamicResource Primary}" />
+      <Setter Property="Background" Value="{DynamicResource SecondaryContainer}" />
+      <Setter Property="MinHeight" Value="4" />
+      <Setter Property="CornerRadius" Value="2" />
+    </Style>
+
+    <!-- Plain tooltips. -->
+    <Style Selector="ToolTip">
+      <Setter Property="Background" Value="{DynamicResource InverseSurface}" />
+      <Setter Property="Foreground" Value="{DynamicResource InverseOnSurface}" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="CornerRadius" Value="4" />
+      <Setter Property="Padding" Value="8,4" />
+      <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <!-- Cards and the snackbar. -->
+    <Style Selector="Border.card">
+      <Setter Property="Background" Value="{DynamicResource SurfaceContainer}" />
+      <Setter Property="CornerRadius" Value="12" />
+      <Setter Property="Padding" Value="16,8,4,8" />
+    </Style>
+    <Style Selector="Border.snackbar">
+      <Setter Property="Background" Value="{DynamicResource InverseSurface}" />
+      <Setter Property="CornerRadius" Value="4" />
+      <Setter Property="Padding" Value="16,14" />
+      <Setter Property="BoxShadow" Value="{DynamicResource Elevation3}" />
+    </Style>
+    <Style Selector="Border.snackbar TextBlock">
+      <Setter Property="Foreground" Value="{DynamicResource InverseOnSurface}" />
     </Style>
   </Application.Styles>
 </Application>

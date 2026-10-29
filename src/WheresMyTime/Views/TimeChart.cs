@@ -63,7 +63,7 @@ public abstract class TimeChart : Control
     protected double Band { get; private set; }
     protected int Active { get; private set; } = -1;
     protected double LineHeight { get; private set; }
-    protected ChartPalette Palette { get; private set; } = ChartPalette.Light;
+    protected ChartPalette Palette { get; private set; } = null!;
     protected Typeface Regular { get; private set; }
     protected Typeface Semibold { get; private set; }
 
@@ -130,7 +130,7 @@ public abstract class TimeChart : Control
         context.FillRectangle(Brushes.Transparent, new Rect(Bounds.Size));
         if (Data is not { Buckets.Count: > 0 } data) return;
 
-        Palette = ChartPalette.For(ActualThemeVariant);
+        Palette = ChartPalette.For(this);
         var font = GetValue(TextElement.FontFamilyProperty);
         Regular = new Typeface(font);
         Semibold = new Typeface(font, FontStyle.Normal, FontWeight.SemiBold);
@@ -250,7 +250,7 @@ public abstract class TimeChart : Control
         var y = Math.Max(2, Math.Min(Plot.Top, Bounds.Height - height - 2));
 
         context.DrawRectangle(Brush(Palette.TooltipBackground), new Pen(Brush(Palette.TooltipBorder)),
-            new RoundedRect(new Rect(x, y, width, height), 8), ReadoutShadow);
+            new RoundedRect(new Rect(x, y, width, height), 12), ReadoutShadow);
 
         var cursor = y + pad;
         context.DrawText(title, new Point(x + pad, cursor));

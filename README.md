@@ -135,6 +135,7 @@ powershell -ExecutionPolicy Bypass -File tools/make-icon.ps1
 
 ```
 src/WheresMyTime/
+  App.axaml     Material 3 look: colour roles generated from the Start-button green, type scale, component styles
   Assets/       the app icon
   Core/         entries, time parsing/formatting, CSV, merge, stats and chart data (no UI)
   Services/     EntryStore (the JSON file, backups, single-instance lock)

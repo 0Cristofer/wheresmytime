@@ -6,7 +6,7 @@ namespace WheresMyTime.Services;
 public interface IUiServices
 {
     Task<EntryDialogResult> ShowEntryDialogAsync(EntryDialogViewModel dialog);
-    Task<bool> ConfirmAsync(string title, string message, string confirmText);
+    Task<bool> ConfirmAsync(string title, string message, string confirmText, bool destructive = false);
     Task ShowMessageAsync(string title, string message);
     Task SetClipboardTextAsync(string text);
 

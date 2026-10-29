@@ -16,8 +16,8 @@ public sealed class UiServices(Window owner) : IUiServices
     public Task<EntryDialogResult> ShowEntryDialogAsync(EntryDialogViewModel dialog) =>
         new EntryDialog { DataContext = dialog }.ShowDialog<EntryDialogResult>(owner);
 
-    public Task<bool> ConfirmAsync(string title, string message, string confirmText) =>
-        new MessageWindow(title, message, confirmText, "Cancel").ShowDialog<bool>(owner);
+    public Task<bool> ConfirmAsync(string title, string message, string confirmText, bool destructive = false) =>
+        new MessageWindow(title, message, confirmText, "Cancel", destructive).ShowDialog<bool>(owner);
 
     public Task ShowMessageAsync(string title, string message) =>
         new MessageWindow(title, message).ShowDialog(owner);

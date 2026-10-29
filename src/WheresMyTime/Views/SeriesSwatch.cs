@@ -22,7 +22,7 @@ public sealed class SeriesSwatch : Control
 
     public override void Render(DrawingContext context)
     {
-        var color = ChartPalette.For(ActualThemeVariant).SeriesColor(Slot);
+        var color = ChartPalette.For(this).SeriesColor(Slot);
         context.DrawRectangle(new SolidColorBrush(color), null, new RoundedRect(new Rect(Bounds.Size), 2));
     }
 }

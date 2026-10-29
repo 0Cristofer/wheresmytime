@@ -112,7 +112,7 @@ public sealed partial class MainViewModel : ObservableObject
         if (_store.Running is { } running)
         {
             var elapsed = TimeUtil.FormatElapsed(now - running.Start);
-            StartStopText = $"Stop    {elapsed}";
+            StartStopText = $"Stop  ·  {elapsed}";
             var startDay = DateOnly.FromDateTime(running.Start);
             var since = startDay == today
                 ? TimeUtil.FormatClock(running.Start)
@@ -196,7 +196,7 @@ public sealed partial class MainViewModel : ObservableObject
             case EntryDialogResult.Discard:
                 var confirmed = await _ui.ConfirmAsync("Discard timer?",
                     $"The {TimeUtil.FormatDuration(draft.Duration)} since {TimeUtil.FormatClock(draft.Start)} won't be recorded.",
-                    "Discard");
+                    "Discard", destructive: true);
                 if (!confirmed || !await TrySave(() => _store.Running = null)) return;
                 ClearInputs();
                 RunningChanged();
@@ -246,7 +246,7 @@ public sealed partial class MainViewModel : ObservableObject
     async Task DeleteEntry(EntryRow row)
     {
         var id = row.Entry.Id;
-        if (!await _ui.ConfirmAsync("Delete entry?", TimeUtil.ToClipboardLine(row.Entry), "Delete")) return;
+        if (!await _ui.ConfirmAsync("Delete entry?", TimeUtil.ToClipboardLine(row.Entry), "Delete", destructive: true)) return;
         if (await TrySave(() => _store.Entries.RemoveAll(e => e.Id == id)))
             AfterEntriesChanged(SelectedDay);
     }
