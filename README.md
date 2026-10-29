@@ -44,6 +44,7 @@ A tiny desktop timer for seeing where your workday goes. Press **Start** when yo
   - A day or week that isn't over yet is drawn faded, so it doesn't look like a drop.
 - Both charts:
   - Ranges over about six weeks show one point per week, and over about six months one per month. Use **Last 12 weeks** or **This year** to see growth.
+  - Day by day, Saturdays and Sundays only appear when something was recorded on them. On such a day the trend only marks the activities that happened, so the others don't dip to zero.
   - Hover, or click the chart and use the arrow keys, to see the numbers for a day.
   - Click an activity in the legend, a line or a bar to highlight it in both charts; the rest turn grey. In Breakdown the highlighted activity moves to the bottom of each column so its growth is easy to read. Click it again, or press Esc, to clear.
   - Your biggest activities keep the same colour whatever range you pick. Beyond seven activities, the smallest are grouped as "Other".

@@ -34,6 +34,32 @@ public class ChartTests
     }
 
     [Fact]
+    public void Weekend_days_only_get_a_column_when_something_was_recorded()
+    {
+        // Mon 26 Oct to Sun 8 Nov: work on Saturday the 31st, nothing on the other weekend days.
+        var entries = new List<TimeEntry> { Entry(27, 9, 2, "Chat"), Entry(31, 10, 1, "Deploy") };
+
+        var chart = ChartBuilder.Build(entries, Day(26), new DateOnly(2026, 11, 8), today: Day(1));
+
+        Assert.Equal(
+            ["Mon 26", "Tue 27", "Wed 28", "Thu 29", "Fri 30", "Sat 31", "Mon 2", "Tue 3", "Wed 4", "Thu 5", "Fri 6"],
+            chart.Buckets.Select(b => b.Label));
+
+        // On that Saturday only Deploy gets a trend point; Chat simply wasn't worked on.
+        var saturday = chart.Buckets.ToList().FindIndex(b => b.Label == "Sat 31");
+        var friday = chart.Buckets.ToList().FindIndex(b => b.Label == "Fri 30");
+        int SeriesOf(string name) => chart.Series.ToList().FindIndex(s => s.Name == name);
+        Assert.True(chart.HasPoint(saturday, SeriesOf("Deploy")));
+        Assert.False(chart.HasPoint(saturday, SeriesOf("Chat")));
+        Assert.False(chart.HasPoint(friday, SeriesOf("Chat")));       // nothing recorded at all that day
+        Assert.True(chart.HasPoint(1, SeriesOf("Deploy")));           // a weekday zero is a real zero
+
+        // Weeks still cover all seven days, weekend included.
+        var weeks = ChartBuilder.Build(entries, new DateOnly(2026, 9, 1), Day(31), today: Day(1));
+        Assert.Equal(TimeSpan.FromHours(3), weeks.Buckets.Single(b => b.Start == Day(26)).Total);
+    }
+
+    [Fact]
     public void Long_ranges_group_by_week_then_month()
     {
         var entries = new List<TimeEntry> { Entry(28, 9, 1, "Chat") };

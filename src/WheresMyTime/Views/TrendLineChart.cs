@@ -15,7 +15,9 @@ public sealed class TrendLineChart : TimeChart
     // Clicks within this distance of a line select it (a 24px-wide target around a 2px line).
     const double HitDistance = 12;
 
-    // Points of each series' line, filled in while rendering and used for hit testing.
+    // Each series' line: the buckets it has points in, and those points (filled in while
+    // rendering, and used for hit testing).
+    readonly List<List<int>> _lineBuckets = [];
     readonly List<Point[]> _lines = [];
 
     protected override double MaxMinutes(ChartData data) =>
@@ -29,10 +31,15 @@ public sealed class TrendLineChart : TimeChart
 
     protected override void DrawMarks(DrawingContext context, ChartData data, int highlight)
     {
-        var withData = Enumerable.Range(0, data.Buckets.Count).Where(i => data.Buckets[i].Total > TimeSpan.Zero).ToList();
+        _lineBuckets.Clear();
         _lines.Clear();
         for (var k = 0; k < data.Series.Count; k++)
-            _lines.Add(withData.Select(i => new Point(X(i), Y(data.Buckets[i].Values[k].TotalMinutes))).ToArray());
+        {
+            var series = k;
+            var buckets = Enumerable.Range(0, data.Buckets.Count).Where(i => data.HasPoint(i, series)).ToList();
+            _lineBuckets.Add(buckets);
+            _lines.Add(buckets.Select(i => new Point(X(i), Y(data.Buckets[i].Values[series].TotalMinutes))).ToArray());
+        }
 
         var order = DrawOrder(data, highlight);
         foreach (var k in order)
@@ -44,7 +51,7 @@ public sealed class TrendLineChart : TimeChart
                 var thickness = k == highlight ? 2.5 : 2;
                 var solid = new Pen(Brush(color), thickness, lineCap: PenLineCap.Round, lineJoin: PenLineJoin.Round);
                 var faded = new Pen(Brush(Color.FromArgb((byte)(color.A * 0.35), color.R, color.G, color.B)), thickness, lineCap: PenLineCap.Round);
-                DrawLine(context, data, withData, points, solid, faded);
+                DrawLine(context, data, _lineBuckets[k], points, solid, faded);
             }
             // A lone point has no line to show it; the highlighted line gets dots when there's room.
             if (points.Length == 1 || (k == highlight && Band >= 12))
@@ -53,13 +60,13 @@ public sealed class TrendLineChart : TimeChart
             }
         }
 
-        if (Active >= 0 && Active < data.Buckets.Count && data.Buckets[Active].Total > TimeSpan.Zero)
+        if (Active >= 0 && Active < data.Buckets.Count)
         {
-            foreach (var k in order)
+            foreach (var k in order.Where(k => data.HasPoint(Active, k)))
                 DrawDot(context, new Point(X(Active), Y(data.Buckets[Active].Values[k].TotalMinutes)), MarkColor(data, k, highlight, line: true));
         }
 
-        if (highlight >= 0) LabelHighlightedLine(context, data, highlight, withData);
+        if (highlight >= 0) LabelHighlightedLine(context, data, highlight, _lineBuckets[highlight]);
     }
 
     // Everything at this slot, biggest first, with the highlighted activity on top.

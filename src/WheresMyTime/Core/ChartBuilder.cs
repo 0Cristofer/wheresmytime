@@ -14,7 +14,21 @@ public sealed record ChartBucket(DateOnly Start, string Label, string ShortLabel
     public TimeSpan Total => StatsBuilder.Sum(Values);
 }
 
-public sealed record ChartData(ChartGrouping Grouping, IReadOnlyList<ChartSeries> Series, IReadOnlyList<ChartBucket> Buckets);
+public sealed record ChartData(ChartGrouping Grouping, IReadOnlyList<ChartSeries> Series, IReadOnlyList<ChartBucket> Buckets)
+{
+    /// <summary>
+    /// Whether a series gets a point on its trend line in this bucket. Buckets with nothing
+    /// recorded are skipped. On a weekend day only the activities that happened count: the
+    /// rest weren't zero that day, they just weren't worked on.
+    /// </summary>
+    public bool HasPoint(int bucket, int series)
+    {
+        var b = Buckets[bucket];
+        if (b.Total <= TimeSpan.Zero) return false;
+        var weekendDay = Grouping == ChartGrouping.Day && b.Start.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday;
+        return !weekendDay || b.Values[series] > TimeSpan.Zero;
+    }
+}
 
 /// <summary>Data for the stacked "time per day, by activity" chart.</summary>
 public static class ChartBuilder
@@ -24,9 +38,10 @@ public static class ChartBuilder
     public const string OtherName = "Other";
 
     /// <summary>
-    /// One column per day for ranges up to ~6 weeks, per week up to ~6 months, per month beyond.
-    /// Series are stacked in colour-slot order with "Other" on top. A period cut off by the range,
-    /// or still in progress, says so in its title, since its total isn't comparable to the others.
+    /// One column per day for ranges up to ~6 weeks (weekend days only when they have entries),
+    /// per week up to ~6 months, per month beyond. Series are stacked in colour-slot order with
+    /// "Other" on top. A period cut off by the range, or still in progress, says so in its title,
+    /// since its total isn't comparable to the others.
     /// </summary>
     public static ChartData Build(IReadOnlyCollection<TimeEntry> allEntries, DateOnly from, DateOnly to, DateOnly? today = null)
     {
@@ -76,6 +91,10 @@ public static class ChartBuilder
                 return Labelled(start, grouping, values[i], note);
             })
             .ToList();
+
+        // Day by day, a Saturday or Sunday only gets a column when something was recorded on it.
+        if (grouping == ChartGrouping.Day)
+            buckets.RemoveAll(b => b.Start.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday && b.Total == TimeSpan.Zero);
         return new ChartData(grouping, series, buckets);
     }
 
