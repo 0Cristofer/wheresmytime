@@ -1,0 +1,61 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:WheresMyTime.ViewModels"
+        x:Class="WheresMyTime.Views.EntryDialog"
+        x:DataType="vm:EntryDialogViewModel"
+        Title="{Binding Title}"
+        Width="440" SizeToContent="Height" CanResize="False"
+        ShowInTaskbar="False" WindowStartupLocation="CenterOwner">
+  <StackPanel Margin="20" Spacing="12">
+    <TextBlock Text="{Binding Title}" FontSize="18" FontWeight="SemiBold" />
+
+    <StackPanel Spacing="4">
+      <TextBlock Classes="label" Text="Activity" />
+      <AutoCompleteBox x:Name="ActivityBox"
+                       Text="{Binding Activity, Mode=TwoWay}"
+                       ItemsSource="{Binding ActivitySuggestions}"
+                       FilterMode="Contains"
+                       PlaceholderText="Meeting, chat, project…" />
+    </StackPanel>
+
+    <StackPanel Spacing="4">
+      <TextBlock Classes="label" Text="Details" />
+      <AutoCompleteBox Text="{Binding Details, Mode=TwoWay}"
+                       ItemsSource="{Binding DetailSuggestions}"
+                       FilterMode="Contains"
+                       PlaceholderText="What exactly was done (optional)" />
+    </StackPanel>
+
+    <Grid ColumnDefinitions="*,10,84,10,84">
+      <StackPanel Spacing="4">
+        <TextBlock Classes="label" Text="Date" />
+        <CalendarDatePicker SelectedDate="{Binding Date}" HorizontalAlignment="Stretch"
+                            SelectedDateFormat="Custom" CustomDateFormatString="yyyy-MM-dd" />
+      </StackPanel>
+      <StackPanel Grid.Column="2" Spacing="4">
+        <TextBlock Classes="label" Text="Start" />
+        <TextBox Classes="tabular" Text="{Binding StartText}" PlaceholderText="HH:mm" />
+      </StackPanel>
+      <StackPanel Grid.Column="4" Spacing="4">
+        <TextBlock Classes="label" Text="End" />
+        <TextBox Text="{Binding EndText}" PlaceholderText="HH:mm" />
+      </StackPanel>
+    </Grid>
+
+    <StackPanel Spacing="2">
+      <TextBlock Text="{Binding DurationText}" FontWeight="SemiBold" />
+      <TextBlock Text="{Binding Error}" Foreground="{DynamicResource ErrorBrush}" TextWrapping="Wrap"
+                 IsVisible="{Binding Error, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+      <TextBlock Text="{Binding Warning}" Foreground="{DynamicResource WarningBrush}" TextWrapping="Wrap"
+                 IsVisible="{Binding Warning, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+    </StackPanel>
+
+    <Grid ColumnDefinitions="Auto,*,Auto,8,Auto" Margin="0,6,0,0">
+      <Button Content="Discard" IsVisible="{Binding CanDiscard}" Click="OnDiscard"
+              ToolTip.Tip="Throw this timer away without recording it" />
+      <Button Grid.Column="2" Content="{Binding CancelText}" IsCancel="True" Click="OnCancel" />
+      <Button x:Name="SaveButton" Grid.Column="4" Content="Save" Classes="accent" IsDefault="True"
+              IsEnabled="{Binding CanSave}" Click="OnSave" />
+    </Grid>
+  </StackPanel>
+</Window>

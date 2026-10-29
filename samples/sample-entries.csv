@@ -1,0 +1,378 @@
+﻿start,end,duration_minutes,activity,details,id
+2026-08-03 09:00:00,2026-08-03 09:45:00,45,Meetings,Retro,sample-0001
+2026-08-03 09:50:00,2026-08-03 11:15:00,85,Project Atlas,Import pipeline,sample-0002
+2026-08-03 11:20:00,2026-08-03 14:30:00,190,Chat,Answering the platform channel,sample-0003
+2026-08-03 15:15:00,2026-08-03 15:50:00,35,Code review,PR for CSV import,sample-0004
+2026-08-03 15:55:00,2026-08-03 16:30:00,35,Email,,sample-0005
+2026-08-04 09:00:00,2026-08-04 10:00:00,60,Meetings,Daily standup,sample-0006
+2026-08-04 10:05:00,2026-08-04 11:15:00,70,Project Atlas,Fix flaky export tests,sample-0007
+2026-08-04 11:20:00,2026-08-04 14:25:00,185,Chat,Helping with the deploy,sample-0008
+2026-08-04 15:10:00,2026-08-04 16:35:00,85,Code review,,sample-0009
+2026-08-04 16:40:00,2026-08-04 17:10:00,30,Email,,sample-0010
+2026-08-05 09:10:00,2026-08-05 10:35:00,85,Meetings,Daily standup,sample-0011
+2026-08-05 10:40:00,2026-08-05 12:15:00,95,Project Atlas,Import pipeline,sample-0012
+2026-08-05 12:20:00,2026-08-05 15:20:00,180,Chat,,sample-0013
+2026-08-05 16:05:00,2026-08-05 17:20:00,75,Code review,Reviewing auth changes,sample-0014
+2026-08-05 17:25:00,2026-08-05 18:05:00,40,Email,,sample-0015
+2026-08-05 18:10:00,2026-08-05 19:10:00,60,Training,Conference talk,sample-0016
+2026-08-06 09:10:00,2026-08-06 10:30:00,80,Meetings,1:1 with lead,sample-0017
+2026-08-06 10:35:00,2026-08-06 12:10:00,95,Project Atlas,CSV parser,sample-0018
+2026-08-06 12:15:00,2026-08-06 15:20:00,185,Chat,Helping with the deploy,sample-0019
+2026-08-06 16:05:00,2026-08-06 17:20:00,75,Code review,Reviewing auth changes,sample-0020
+2026-08-06 17:25:00,2026-08-06 17:40:00,15,Email,,sample-0021
+2026-08-06 17:45:00,2026-08-06 18:55:00,70,Docs,Onboarding guide,sample-0022
+2026-08-06 22:30:00,2026-08-07 00:45:00,135,Incident,Release deploy,sample-0023
+2026-08-07 09:00:00,2026-08-07 10:05:00,65,Meetings,Sprint planning,sample-0024
+2026-08-07 10:10:00,2026-08-07 12:10:00,120,Project Atlas,Import pipeline,sample-0025
+2026-08-07 12:15:00,2026-08-07 15:25:00,190,Chat,Helping with the deploy,sample-0026
+2026-08-07 16:10:00,2026-08-07 16:55:00,45,Code review,PR for CSV import,sample-0027
+2026-08-07 17:00:00,2026-08-07 17:15:00,15,Email,,sample-0028
+2026-08-07 17:20:00,2026-08-07 19:10:00,110,Hiring,Interview,sample-0029
+2026-08-07 19:15:00,2026-08-07 20:25:00,70,Incident,Database failover,sample-0030
+2026-08-10 09:10:00,2026-08-10 10:40:00,90,Meetings,1:1 with lead,sample-0031
+2026-08-10 10:45:00,2026-08-10 12:50:00,125,Project Atlas,Performance tuning,sample-0032
+2026-08-10 12:55:00,2026-08-10 16:00:00,185,Chat,Support questions,sample-0033
+2026-08-10 16:45:00,2026-08-10 17:40:00,55,Code review,,sample-0034
+2026-08-10 17:45:00,2026-08-10 18:20:00,35,Email,,sample-0035
+2026-08-11 09:10:00,2026-08-11 10:25:00,75,Meetings,Daily standup,sample-0036
+2026-08-11 10:30:00,2026-08-11 12:05:00,95,Project Atlas,CSV parser,sample-0037
+2026-08-11 12:10:00,2026-08-11 15:25:00,195,Chat,Answering the platform channel,sample-0038
+2026-08-11 16:10:00,2026-08-11 17:05:00,55,Code review,Reviewing auth changes,sample-0039
+2026-08-11 17:10:00,2026-08-11 17:45:00,35,Email,,sample-0040
+2026-08-11 17:50:00,2026-08-11 18:35:00,45,Planning,Roadmap,sample-0041
+2026-08-12 09:00:00,2026-08-12 09:45:00,45,Meetings,1:1 with lead,sample-0042
+2026-08-12 09:50:00,2026-08-12 11:15:00,85,Project Atlas,Fix flaky export tests,sample-0043
+2026-08-12 11:20:00,2026-08-12 14:25:00,185,Chat,Support questions,sample-0044
+2026-08-12 15:10:00,2026-08-12 16:00:00,50,Code review,,sample-0045
+2026-08-12 16:05:00,2026-08-12 16:40:00,35,Email,,sample-0046
+2026-08-13 09:10:00,2026-08-13 10:25:00,75,Meetings,Sprint planning,sample-0047
+2026-08-13 10:30:00,2026-08-13 12:20:00,110,Project Atlas,Import pipeline,sample-0048
+2026-08-13 12:25:00,2026-08-13 15:20:00,175,Chat,Helping with the deploy,sample-0049
+2026-08-13 16:05:00,2026-08-13 17:10:00,65,Code review,PR for CSV import,sample-0050
+2026-08-13 17:15:00,2026-08-13 17:40:00,25,Email,,sample-0051
+2026-08-13 17:45:00,2026-08-13 19:25:00,100,Hiring,Take-home review,sample-0052
+2026-08-13 22:30:00,2026-08-14 00:45:00,135,Incident,Release deploy,sample-0053
+2026-08-14 09:05:00,2026-08-14 10:10:00,65,Meetings,Sprint planning,sample-0054
+2026-08-14 10:15:00,2026-08-14 11:50:00,95,Project Atlas,Fix flaky export tests,sample-0055
+2026-08-14 11:55:00,2026-08-14 15:05:00,190,Chat,Answering the platform channel,sample-0056
+2026-08-14 15:50:00,2026-08-14 17:20:00,90,Code review,Reviewing auth changes,sample-0057
+2026-08-14 17:25:00,2026-08-14 17:55:00,30,Email,,sample-0058
+2026-08-14 18:00:00,2026-08-14 19:15:00,75,Hiring,Take-home review,sample-0059
+2026-08-17 09:05:00,2026-08-17 10:25:00,80,Meetings,Sprint planning,sample-0060
+2026-08-17 10:30:00,2026-08-17 12:05:00,95,Project Atlas,Performance tuning,sample-0061
+2026-08-17 12:10:00,2026-08-17 15:15:00,185,Chat,,sample-0062
+2026-08-17 16:00:00,2026-08-17 17:05:00,65,Code review,PR for CSV import,sample-0063
+2026-08-17 17:10:00,2026-08-17 17:40:00,30,Email,,sample-0064
+2026-08-17 17:45:00,2026-08-17 19:35:00,110,Hiring,Take-home review,sample-0065
+2026-08-18 09:10:00,2026-08-18 10:20:00,70,Meetings,Sprint planning,sample-0066
+2026-08-18 10:25:00,2026-08-18 13:00:00,155,Project Atlas,Report by date range,sample-0067
+2026-08-18 13:05:00,2026-08-18 15:55:00,170,Chat,Support questions,sample-0068
+2026-08-18 16:40:00,2026-08-18 17:15:00,35,Code review,Reviewing auth changes,sample-0069
+2026-08-18 17:20:00,2026-08-18 17:45:00,25,Email,,sample-0070
+2026-08-18 17:50:00,2026-08-18 18:50:00,60,Training,Course: distributed systems,sample-0071
+2026-08-19 09:00:00,2026-08-19 10:10:00,70,Meetings,Retro,sample-0072
+2026-08-19 10:15:00,2026-08-19 12:15:00,120,Project Atlas,CSV parser,sample-0073
+2026-08-19 12:20:00,2026-08-19 15:15:00,175,Chat,Support questions,sample-0074
+2026-08-19 16:00:00,2026-08-19 17:30:00,90,Code review,Reviewing auth changes,sample-0075
+2026-08-19 17:35:00,2026-08-19 17:50:00,15,Email,,sample-0076
+2026-08-20 09:10:00,2026-08-20 10:10:00,60,Meetings,Sprint planning,sample-0077
+2026-08-20 10:15:00,2026-08-20 12:15:00,120,Project Atlas,Performance tuning,sample-0078
+2026-08-20 12:20:00,2026-08-20 15:10:00,170,Chat,Answering the platform channel,sample-0079
+2026-08-20 15:55:00,2026-08-20 16:40:00,45,Code review,PR for CSV import,sample-0080
+2026-08-20 16:45:00,2026-08-20 17:00:00,15,Email,,sample-0081
+2026-08-20 22:30:00,2026-08-21 00:45:00,135,Incident,Release deploy,sample-0082
+2026-08-21 09:00:00,2026-08-21 09:50:00,50,Meetings,1:1 with lead,sample-0083
+2026-08-21 09:55:00,2026-08-21 12:30:00,155,Project Atlas,Fix flaky export tests,sample-0084
+2026-08-21 12:35:00,2026-08-21 15:10:00,155,Chat,Helping with the deploy,sample-0085
+2026-08-21 15:55:00,2026-08-21 16:50:00,55,Code review,PR for CSV import,sample-0086
+2026-08-21 16:55:00,2026-08-21 17:35:00,40,Email,,sample-0087
+2026-08-21 17:40:00,2026-08-21 18:25:00,45,Planning,Roadmap,sample-0088
+2026-08-21 18:30:00,2026-08-21 19:30:00,60,Docs,Onboarding guide,sample-0089
+2026-08-24 09:05:00,2026-08-24 09:55:00,50,Meetings,Daily standup,sample-0090
+2026-08-24 10:00:00,2026-08-24 11:55:00,115,Project Atlas,Performance tuning,sample-0091
+2026-08-24 12:00:00,2026-08-24 15:00:00,180,Chat,Helping with the deploy,sample-0092
+2026-08-24 15:45:00,2026-08-24 16:45:00,60,Code review,,sample-0093
+2026-08-24 16:50:00,2026-08-24 17:25:00,35,Email,,sample-0094
+2026-08-25 09:05:00,2026-08-25 10:20:00,75,Meetings,Reunião de alinhamento,sample-0095
+2026-08-25 10:25:00,2026-08-25 13:00:00,155,Project Atlas,Import pipeline,sample-0096
+2026-08-25 13:05:00,2026-08-25 15:35:00,150,Chat,Helping with the deploy,sample-0097
+2026-08-25 16:20:00,2026-08-25 17:00:00,40,Code review,Reviewing auth changes,sample-0098
+2026-08-25 17:05:00,2026-08-25 17:25:00,20,Email,,sample-0099
+2026-08-25 17:30:00,2026-08-25 19:20:00,110,Hiring,Take-home review,sample-0100
+2026-08-25 19:25:00,2026-08-25 20:25:00,60,Training,Course: distributed systems,sample-0101
+2026-08-26 09:05:00,2026-08-26 10:10:00,65,Meetings,Retro,sample-0102
+2026-08-26 10:15:00,2026-08-26 13:10:00,175,Project Atlas,Report by date range,sample-0103
+2026-08-26 13:15:00,2026-08-26 16:05:00,170,Chat,Answering the platform channel,sample-0104
+2026-08-26 16:50:00,2026-08-26 18:15:00,85,Code review,Reviewing auth changes,sample-0105
+2026-08-26 18:20:00,2026-08-26 18:50:00,30,Email,,sample-0106
+2026-08-26 18:55:00,2026-08-26 20:15:00,80,Hiring,Interview,sample-0107
+2026-08-27 09:05:00,2026-08-27 10:20:00,75,Meetings,Retro,sample-0108
+2026-08-27 10:25:00,2026-08-27 13:10:00,165,Project Atlas,Fix flaky export tests,sample-0109
+2026-08-27 13:15:00,2026-08-27 16:00:00,165,Chat,Answering the platform channel,sample-0110
+2026-08-27 16:45:00,2026-08-27 18:10:00,85,Code review,Reviewing auth changes,sample-0111
+2026-08-27 18:15:00,2026-08-27 18:40:00,25,Email,,sample-0112
+2026-08-27 18:45:00,2026-08-27 19:45:00,60,Training,Conference talk,sample-0113
+2026-08-27 19:50:00,2026-08-27 20:35:00,45,Planning,Roadmap,sample-0114
+2026-08-27 22:30:00,2026-08-28 00:15:00,105,Incident,Release deploy,sample-0115
+2026-08-28 09:05:00,2026-08-28 10:30:00,85,Meetings,Daily standup,sample-0116
+2026-08-28 10:35:00,2026-08-28 12:50:00,135,Project Atlas,Report by date range,sample-0117
+2026-08-28 12:55:00,2026-08-28 15:30:00,155,Chat,Helping with the deploy,sample-0118
+2026-08-28 16:15:00,2026-08-28 16:50:00,35,Code review,,sample-0119
+2026-08-28 16:55:00,2026-08-28 17:30:00,35,Email,,sample-0120
+2026-08-28 17:35:00,2026-08-28 19:25:00,110,Hiring,Interview,sample-0121
+2026-08-28 19:30:00,2026-08-28 20:55:00,85,Docs,Wiki,sample-0122
+2026-08-31 09:00:00,2026-08-31 10:15:00,75,Meetings,Daily standup,sample-0123
+2026-08-31 10:20:00,2026-08-31 13:20:00,180,Project Atlas,Performance tuning,sample-0124
+2026-08-31 13:25:00,2026-08-31 16:05:00,160,Chat,Helping with the deploy,sample-0125
+2026-08-31 16:50:00,2026-08-31 17:45:00,55,Code review,Reviewing auth changes,sample-0126
+2026-08-31 17:50:00,2026-08-31 18:25:00,35,Email,,sample-0127
+2026-08-31 18:30:00,2026-08-31 19:30:00,60,Training,Conference talk,sample-0128
+2026-08-31 19:35:00,2026-08-31 20:10:00,35,Docs,Wiki,sample-0129
+2026-09-01 09:00:00,2026-09-01 10:30:00,90,Meetings,Daily standup,sample-0130
+2026-09-01 10:35:00,2026-09-01 13:00:00,145,Project Atlas,Performance tuning,sample-0131
+2026-09-01 13:05:00,2026-09-01 15:50:00,165,Chat,Support questions,sample-0132
+2026-09-01 16:35:00,2026-09-01 18:00:00,85,Code review,PR for CSV import,sample-0133
+2026-09-01 18:05:00,2026-09-01 18:40:00,35,Email,,sample-0134
+2026-09-02 09:05:00,2026-09-02 10:25:00,80,Meetings,Daily standup,sample-0135
+2026-09-02 10:30:00,2026-09-02 13:40:00,190,Project Atlas,Performance tuning,sample-0136
+2026-09-02 13:45:00,2026-09-02 16:20:00,155,Chat,Support questions,sample-0137
+2026-09-02 17:05:00,2026-09-02 17:50:00,45,Code review,Reviewing auth changes,sample-0138
+2026-09-02 17:55:00,2026-09-02 18:30:00,35,Email,,sample-0139
+2026-09-02 18:35:00,2026-09-02 20:00:00,85,Hiring,Interview,sample-0140
+2026-09-03 09:10:00,2026-09-03 10:40:00,90,Meetings,Reunião de alinhamento,sample-0141
+2026-09-03 10:45:00,2026-09-03 13:05:00,140,Project Atlas,Report by date range,sample-0142
+2026-09-03 13:10:00,2026-09-03 15:45:00,155,Chat,Helping with the deploy,sample-0143
+2026-09-03 16:30:00,2026-09-03 17:30:00,60,Code review,,sample-0144
+2026-09-03 17:35:00,2026-09-03 17:50:00,15,Email,,sample-0145
+2026-09-03 17:55:00,2026-09-03 19:40:00,105,Hiring,Take-home review,sample-0146
+2026-09-03 22:30:00,2026-09-04 00:45:00,135,Incident,Release deploy,sample-0147
+2026-09-04 09:00:00,2026-09-04 10:15:00,75,Meetings,Sprint planning,sample-0148
+2026-09-04 10:20:00,2026-09-04 12:45:00,145,Project Atlas,Report by date range,sample-0149
+2026-09-04 12:50:00,2026-09-04 15:10:00,140,Chat,Support questions,sample-0150
+2026-09-04 15:55:00,2026-09-04 17:10:00,75,Code review,PR for CSV import,sample-0151
+2026-09-04 17:15:00,2026-09-04 17:40:00,25,Email,,sample-0152
+2026-09-07 09:00:00,2026-09-07 09:50:00,50,Meetings,Sprint planning,sample-0153
+2026-09-07 09:55:00,2026-09-07 12:50:00,175,Project Atlas,Performance tuning,sample-0154
+2026-09-07 12:55:00,2026-09-07 15:35:00,160,Chat,Support questions,sample-0155
+2026-09-07 16:20:00,2026-09-07 17:20:00,60,Code review,Reviewing auth changes,sample-0156
+2026-09-07 17:25:00,2026-09-07 17:50:00,25,Email,,sample-0157
+2026-09-07 17:55:00,2026-09-07 20:10:00,135,Incident,Database failover,sample-0158
+2026-09-08 09:00:00,2026-09-08 10:15:00,75,Meetings,Daily standup,sample-0159
+2026-09-08 10:20:00,2026-09-08 13:45:00,205,Project Atlas,Import pipeline,sample-0160
+2026-09-08 13:50:00,2026-09-08 16:25:00,155,Chat,Support questions,sample-0161
+2026-09-08 17:10:00,2026-09-08 18:30:00,80,Code review,Reviewing auth changes,sample-0162
+2026-09-08 18:35:00,2026-09-08 19:00:00,25,Email,,sample-0163
+2026-09-09 09:05:00,2026-09-09 10:25:00,80,Meetings,Daily standup,sample-0164
+2026-09-09 10:30:00,2026-09-09 13:55:00,205,Project Atlas,CSV parser,sample-0165
+2026-09-09 14:00:00,2026-09-09 16:25:00,145,Chat,,sample-0166
+2026-09-09 17:10:00,2026-09-09 17:50:00,40,Code review,PR for CSV import,sample-0167
+2026-09-09 17:55:00,2026-09-09 18:15:00,20,Email,,sample-0168
+2026-09-10 09:00:00,2026-09-10 09:55:00,55,Meetings,Sprint planning,sample-0169
+2026-09-10 10:00:00,2026-09-10 12:55:00,175,Project Atlas,Fix flaky export tests,sample-0170
+2026-09-10 13:00:00,2026-09-10 15:20:00,140,Chat,Support questions,sample-0171
+2026-09-10 16:05:00,2026-09-10 17:00:00,55,Code review,Reviewing auth changes,sample-0172
+2026-09-10 17:05:00,2026-09-10 17:30:00,25,Email,,sample-0173
+2026-09-10 22:30:00,2026-09-11 00:45:00,135,Incident,Release deploy,sample-0174
+2026-09-11 09:05:00,2026-09-11 10:15:00,70,Meetings,Reunião de alinhamento,sample-0175
+2026-09-11 10:20:00,2026-09-11 13:10:00,170,Project Atlas,CSV parser,sample-0176
+2026-09-11 13:15:00,2026-09-11 15:30:00,135,Chat,Answering the platform channel,sample-0177
+2026-09-11 16:15:00,2026-09-11 17:15:00,60,Code review,Reviewing auth changes,sample-0178
+2026-09-11 17:20:00,2026-09-11 17:45:00,25,Email,,sample-0179
+2026-09-11 17:50:00,2026-09-11 18:45:00,55,Incident,Database failover,sample-0180
+2026-09-14 09:05:00,2026-09-14 09:55:00,50,Meetings,Retro,sample-0181
+2026-09-14 10:00:00,2026-09-14 13:20:00,200,Project Atlas,CSV parser,sample-0182
+2026-09-14 13:25:00,2026-09-14 15:55:00,150,Chat,Helping with the deploy,sample-0183
+2026-09-14 16:40:00,2026-09-14 17:25:00,45,Code review,,sample-0184
+2026-09-14 17:30:00,2026-09-14 17:50:00,20,Email,,sample-0185
+2026-09-14 17:55:00,2026-09-14 19:05:00,70,Incident,On-call,sample-0186
+2026-09-15 09:05:00,2026-09-15 10:20:00,75,Meetings,Reunião de alinhamento,sample-0187
+2026-09-15 10:25:00,2026-09-15 13:45:00,200,Project Atlas,Performance tuning,sample-0188
+2026-09-15 13:50:00,2026-09-15 16:15:00,145,Chat,Support questions,sample-0189
+2026-09-15 17:00:00,2026-09-15 17:55:00,55,Code review,PR for CSV import,sample-0190
+2026-09-15 18:00:00,2026-09-15 18:30:00,30,Email,,sample-0191
+2026-09-16 09:10:00,2026-09-16 10:35:00,85,Meetings,Retro,sample-0192
+2026-09-16 10:40:00,2026-09-16 14:05:00,205,Project Atlas,Performance tuning,sample-0193
+2026-09-16 14:10:00,2026-09-16 16:15:00,125,Chat,Support questions,sample-0194
+2026-09-16 17:00:00,2026-09-16 17:45:00,45,Code review,Reviewing auth changes,sample-0195
+2026-09-16 17:50:00,2026-09-16 18:10:00,20,Email,,sample-0196
+2026-09-17 09:10:00,2026-09-17 10:20:00,70,Meetings,Sprint planning,sample-0197
+2026-09-17 10:25:00,2026-09-17 14:00:00,215,Project Atlas,Performance tuning,sample-0198
+2026-09-17 14:05:00,2026-09-17 16:15:00,130,Chat,Helping with the deploy,sample-0199
+2026-09-17 17:00:00,2026-09-17 17:35:00,35,Code review,Reviewing auth changes,sample-0200
+2026-09-17 17:40:00,2026-09-17 18:15:00,35,Email,,sample-0201
+2026-09-17 18:20:00,2026-09-17 19:20:00,60,Training,Course: distributed systems,sample-0202
+2026-09-17 22:30:00,2026-09-18 00:30:00,120,Incident,Release deploy,sample-0203
+2026-09-18 09:10:00,2026-09-18 10:00:00,50,Meetings,Retro,sample-0204
+2026-09-18 10:05:00,2026-09-18 13:10:00,185,Project Atlas,Report by date range,sample-0205
+2026-09-18 13:15:00,2026-09-18 15:40:00,145,Chat,Answering the platform channel,sample-0206
+2026-09-18 16:25:00,2026-09-18 17:40:00,75,Code review,,sample-0207
+2026-09-18 17:45:00,2026-09-18 18:20:00,35,Email,,sample-0208
+2026-09-21 09:10:00,2026-09-21 10:25:00,75,Meetings,Reunião de alinhamento,sample-0209
+2026-09-21 10:30:00,2026-09-21 14:15:00,225,Project Atlas,Report by date range,sample-0210
+2026-09-21 14:20:00,2026-09-21 16:25:00,125,Chat,,sample-0211
+2026-09-21 17:10:00,2026-09-21 18:45:00,95,Code review,PR for CSV import,sample-0212
+2026-09-21 18:50:00,2026-09-21 19:25:00,35,Email,,sample-0213
+2026-09-21 19:30:00,2026-09-21 20:40:00,70,Hiring,Take-home review,sample-0214
+2026-09-22 09:05:00,2026-09-22 09:50:00,45,Meetings,1:1 with lead,sample-0215
+2026-09-22 09:55:00,2026-09-22 13:35:00,220,Project Atlas,Performance tuning,sample-0216
+2026-09-22 13:40:00,2026-09-22 15:45:00,125,Chat,Support questions,sample-0217
+2026-09-22 16:30:00,2026-09-22 18:05:00,95,Code review,,sample-0218
+2026-09-22 18:10:00,2026-09-22 18:45:00,35,Email,,sample-0219
+2026-09-23 09:00:00,2026-09-23 10:10:00,70,Meetings,Retro,sample-0220
+2026-09-23 10:15:00,2026-09-23 14:20:00,245,Project Atlas,Report by date range,sample-0221
+2026-09-23 14:25:00,2026-09-23 16:45:00,140,Chat,Support questions,sample-0222
+2026-09-23 17:30:00,2026-09-23 18:20:00,50,Code review,PR for CSV import,sample-0223
+2026-09-23 18:25:00,2026-09-23 19:00:00,35,Email,,sample-0224
+2026-09-23 19:05:00,2026-09-23 21:00:00,115,Incident,On-call,sample-0225
+2026-09-24 09:00:00,2026-09-24 09:50:00,50,Meetings,Sprint planning,sample-0226
+2026-09-24 09:55:00,2026-09-24 13:45:00,230,Project Atlas,Performance tuning,sample-0227
+2026-09-24 13:50:00,2026-09-24 15:45:00,115,Chat,Answering the platform channel,sample-0228
+2026-09-24 16:30:00,2026-09-24 17:10:00,40,Code review,PR for CSV import,sample-0229
+2026-09-24 17:15:00,2026-09-24 17:40:00,25,Email,,sample-0230
+2026-09-24 17:45:00,2026-09-24 18:30:00,45,Planning,"Q4 ""stretch"" goals, first draft",sample-0231
+2026-09-24 22:30:00,2026-09-25 00:45:00,135,Incident,Release deploy,sample-0232
+2026-09-25 09:10:00,2026-09-25 10:15:00,65,Meetings,Retro,sample-0233
+2026-09-25 10:20:00,2026-09-25 13:40:00,200,Project Atlas,Report by date range,sample-0234
+2026-09-25 13:45:00,2026-09-25 15:40:00,115,Chat,Support questions,sample-0235
+2026-09-25 16:25:00,2026-09-25 17:50:00,85,Code review,Reviewing auth changes,sample-0236
+2026-09-25 17:55:00,2026-09-25 18:25:00,30,Email,,sample-0237
+2026-09-25 18:30:00,2026-09-25 19:35:00,65,Hiring,Interview,sample-0238
+2026-09-28 09:05:00,2026-09-28 09:55:00,50,Meetings,Retro,sample-0239
+2026-09-28 10:00:00,2026-09-28 13:20:00,200,Project Atlas,Fix flaky export tests,sample-0240
+2026-09-28 13:25:00,2026-09-28 15:30:00,125,Chat,Answering the platform channel,sample-0241
+2026-09-28 16:15:00,2026-09-28 17:10:00,55,Code review,Reviewing auth changes,sample-0242
+2026-09-28 17:15:00,2026-09-28 17:40:00,25,Email,,sample-0243
+2026-09-28 17:45:00,2026-09-28 19:15:00,90,Hiring,Interview,sample-0244
+2026-09-28 19:20:00,2026-09-28 20:10:00,50,Docs,Wiki,sample-0245
+2026-09-29 09:10:00,2026-09-29 10:20:00,70,Meetings,Reunião de alinhamento,sample-0246
+2026-09-29 10:25:00,2026-09-29 14:30:00,245,Project Atlas,Import pipeline,sample-0247
+2026-09-29 14:35:00,2026-09-29 16:25:00,110,Chat,Helping with the deploy,sample-0248
+2026-09-29 17:10:00,2026-09-29 18:15:00,65,Code review,,sample-0249
+2026-09-29 18:20:00,2026-09-29 18:50:00,30,Email,,sample-0250
+2026-09-29 18:55:00,2026-09-29 20:45:00,110,Incident,Database failover,sample-0251
+2026-09-30 09:10:00,2026-09-30 10:10:00,60,Meetings,Daily standup,sample-0252
+2026-09-30 10:15:00,2026-09-30 14:10:00,235,Project Atlas,Import pipeline,sample-0253
+2026-09-30 14:15:00,2026-09-30 16:10:00,115,Chat,Answering the platform channel,sample-0254
+2026-09-30 16:55:00,2026-09-30 18:05:00,70,Code review,,sample-0255
+2026-09-30 18:10:00,2026-09-30 18:40:00,30,Email,,sample-0256
+2026-09-30 18:45:00,2026-09-30 20:15:00,90,Hiring,Interview,sample-0257
+2026-09-30 20:20:00,2026-09-30 22:25:00,125,Incident,On-call,sample-0258
+2026-10-01 09:10:00,2026-10-01 10:20:00,70,Meetings,1:1 with lead,sample-0259
+2026-10-01 10:25:00,2026-10-01 14:10:00,225,Project Atlas,CSV parser,sample-0260
+2026-10-01 14:15:00,2026-10-01 16:10:00,115,Chat,Answering the platform channel,sample-0261
+2026-10-01 16:55:00,2026-10-01 18:15:00,80,Code review,PR for CSV import,sample-0262
+2026-10-01 18:20:00,2026-10-01 18:55:00,35,Email,,sample-0263
+2026-10-01 19:00:00,2026-10-01 20:25:00,85,Hiring,Interview,sample-0264
+2026-10-01 20:30:00,2026-10-01 22:40:00,130,Incident,Database failover,sample-0265
+2026-10-01 22:30:00,2026-10-02 00:30:00,120,Incident,Release deploy,sample-0266
+2026-10-02 09:05:00,2026-10-02 10:10:00,65,Meetings,1:1 with lead,sample-0267
+2026-10-02 10:15:00,2026-10-02 13:45:00,210,Project Atlas,Import pipeline,sample-0268
+2026-10-02 13:50:00,2026-10-02 15:50:00,120,Chat,Answering the platform channel,sample-0269
+2026-10-02 16:35:00,2026-10-02 18:00:00,85,Code review,PR for CSV import,sample-0270
+2026-10-02 18:05:00,2026-10-02 18:40:00,35,Email,,sample-0271
+2026-10-02 18:45:00,2026-10-02 19:45:00,60,Training,Conference talk,sample-0272
+2026-10-05 09:05:00,2026-10-05 09:55:00,50,Meetings,Daily standup,sample-0273
+2026-10-05 10:00:00,2026-10-05 14:30:00,270,Project Atlas,Performance tuning,sample-0274
+2026-10-05 14:35:00,2026-10-05 16:20:00,105,Chat,,sample-0275
+2026-10-05 17:05:00,2026-10-05 18:40:00,95,Code review,PR for CSV import,sample-0276
+2026-10-05 18:45:00,2026-10-05 19:05:00,20,Email,,sample-0277
+2026-10-05 19:10:00,2026-10-05 20:15:00,65,Docs,Wiki,sample-0278
+2026-10-06 09:10:00,2026-10-06 10:05:00,55,Meetings,Reunião de alinhamento,sample-0279
+2026-10-06 10:10:00,2026-10-06 14:30:00,260,Project Atlas,CSV parser,sample-0280
+2026-10-06 14:35:00,2026-10-06 16:25:00,110,Chat,Helping with the deploy,sample-0281
+2026-10-06 17:10:00,2026-10-06 17:45:00,35,Code review,,sample-0282
+2026-10-06 17:50:00,2026-10-06 18:10:00,20,Email,,sample-0283
+2026-10-07 09:00:00,2026-10-07 09:55:00,55,Meetings,1:1 with lead,sample-0284
+2026-10-07 10:00:00,2026-10-07 14:35:00,275,Project Atlas,Report by date range,sample-0285
+2026-10-07 14:40:00,2026-10-07 16:30:00,110,Chat,,sample-0286
+2026-10-07 17:15:00,2026-10-07 18:20:00,65,Code review,PR for CSV import,sample-0287
+2026-10-07 18:25:00,2026-10-07 19:05:00,40,Email,,sample-0288
+2026-10-08 09:10:00,2026-10-08 10:30:00,80,Meetings,Retro,sample-0289
+2026-10-08 10:35:00,2026-10-08 14:55:00,260,Project Atlas,Fix flaky export tests,sample-0290
+2026-10-08 15:00:00,2026-10-08 16:35:00,95,Chat,Answering the platform channel,sample-0291
+2026-10-08 17:20:00,2026-10-08 18:45:00,85,Code review,Reviewing auth changes,sample-0292
+2026-10-08 18:50:00,2026-10-08 19:25:00,35,Email,,sample-0293
+2026-10-08 22:30:00,2026-10-09 00:00:00,90,Incident,Release deploy,sample-0294
+2026-10-09 09:00:00,2026-10-09 09:55:00,55,Meetings,Sprint planning,sample-0295
+2026-10-09 10:00:00,2026-10-09 14:00:00,240,Project Atlas,Import pipeline,sample-0296
+2026-10-09 14:05:00,2026-10-09 15:50:00,105,Chat,Helping with the deploy,sample-0297
+2026-10-09 16:35:00,2026-10-09 17:20:00,45,Code review,,sample-0298
+2026-10-09 17:25:00,2026-10-09 18:00:00,35,Email,,sample-0299
+2026-10-12 09:05:00,2026-10-12 10:10:00,65,Meetings,Sprint planning,sample-0300
+2026-10-12 10:15:00,2026-10-12 14:50:00,275,Project Atlas,Import pipeline,sample-0301
+2026-10-12 14:55:00,2026-10-12 16:20:00,85,Chat,Helping with the deploy,sample-0302
+2026-10-12 17:05:00,2026-10-12 17:50:00,45,Code review,,sample-0303
+2026-10-12 17:55:00,2026-10-12 18:25:00,30,Email,,sample-0304
+2026-10-13 09:00:00,2026-10-13 09:55:00,55,Meetings,Sprint planning,sample-0305
+2026-10-13 10:00:00,2026-10-13 13:55:00,235,Project Atlas,Report by date range,sample-0306
+2026-10-13 14:00:00,2026-10-13 15:25:00,85,Chat,Answering the platform channel,sample-0307
+2026-10-13 16:10:00,2026-10-13 16:45:00,35,Code review,PR for CSV import,sample-0308
+2026-10-13 16:50:00,2026-10-13 17:25:00,35,Email,,sample-0309
+2026-10-13 17:30:00,2026-10-13 19:25:00,115,Hiring,Interview,sample-0310
+2026-10-14 09:10:00,2026-10-14 10:00:00,50,Meetings,Daily standup,sample-0311
+2026-10-14 10:05:00,2026-10-14 14:15:00,250,Project Atlas,Report by date range,sample-0312
+2026-10-14 14:20:00,2026-10-14 16:00:00,100,Chat,Support questions,sample-0313
+2026-10-14 16:45:00,2026-10-14 18:10:00,85,Code review,Reviewing auth changes,sample-0314
+2026-10-14 18:15:00,2026-10-14 18:50:00,35,Email,,sample-0315
+2026-10-14 18:55:00,2026-10-14 20:05:00,70,Hiring,Interview,sample-0316
+2026-10-14 20:10:00,2026-10-14 20:50:00,40,Docs,Onboarding guide,sample-0317
+2026-10-15 09:00:00,2026-10-15 10:10:00,70,Meetings,1:1 with lead,sample-0318
+2026-10-15 10:15:00,2026-10-15 14:55:00,280,Project Atlas,Report by date range,sample-0319
+2026-10-15 15:00:00,2026-10-15 16:45:00,105,Chat,Support questions,sample-0320
+2026-10-15 17:30:00,2026-10-15 18:20:00,50,Code review,Reviewing auth changes,sample-0321
+2026-10-15 18:25:00,2026-10-15 18:55:00,30,Email,,sample-0322
+2026-10-15 19:00:00,2026-10-15 20:05:00,65,Hiring,Interview,sample-0323
+2026-10-15 22:30:00,2026-10-16 00:15:00,105,Incident,Release deploy,sample-0324
+2026-10-16 09:05:00,2026-10-16 09:55:00,50,Meetings,Daily standup,sample-0325
+2026-10-16 10:00:00,2026-10-16 14:05:00,245,Project Atlas,Report by date range,sample-0326
+2026-10-16 14:10:00,2026-10-16 15:55:00,105,Chat,Support questions,sample-0327
+2026-10-16 16:40:00,2026-10-16 17:40:00,60,Code review,PR for CSV import,sample-0328
+2026-10-16 17:45:00,2026-10-16 18:10:00,25,Email,,sample-0329
+2026-10-19 09:00:00,2026-10-19 10:20:00,80,Meetings,Daily standup,sample-0330
+2026-10-19 10:25:00,2026-10-19 14:45:00,260,Project Atlas,Import pipeline,sample-0331
+2026-10-19 14:50:00,2026-10-19 16:05:00,75,Chat,,sample-0332
+2026-10-19 16:50:00,2026-10-19 17:30:00,40,Code review,Reviewing auth changes,sample-0333
+2026-10-19 17:35:00,2026-10-19 18:05:00,30,Email,,sample-0334
+2026-10-19 18:10:00,2026-10-19 20:30:00,140,Incident,Database failover,sample-0335
+2026-10-20 09:10:00,2026-10-20 10:20:00,70,Meetings,Reunião de alinhamento,sample-0336
+2026-10-20 10:25:00,2026-10-20 15:25:00,300,Project Atlas,Report by date range,sample-0337
+2026-10-20 15:30:00,2026-10-20 16:45:00,75,Chat,Answering the platform channel,sample-0338
+2026-10-20 17:30:00,2026-10-20 18:05:00,35,Code review,Reviewing auth changes,sample-0339
+2026-10-20 18:10:00,2026-10-20 18:35:00,25,Email,,sample-0340
+2026-10-20 18:40:00,2026-10-20 20:15:00,95,Hiring,Take-home review,sample-0341
+2026-10-21 09:05:00,2026-10-21 10:05:00,60,Meetings,Sprint planning,sample-0342
+2026-10-21 10:10:00,2026-10-21 15:05:00,295,Project Atlas,Report by date range,sample-0343
+2026-10-21 15:10:00,2026-10-21 16:40:00,90,Chat,Support questions,sample-0344
+2026-10-21 17:25:00,2026-10-21 18:05:00,40,Code review,PR for CSV import,sample-0345
+2026-10-21 18:10:00,2026-10-21 18:45:00,35,Email,,sample-0346
+2026-10-21 18:50:00,2026-10-21 20:30:00,100,Hiring,Interview,sample-0347
+2026-10-22 09:10:00,2026-10-22 10:10:00,60,Meetings,Daily standup,sample-0348
+2026-10-22 10:15:00,2026-10-22 14:50:00,275,Project Atlas,Performance tuning,sample-0349
+2026-10-22 14:55:00,2026-10-22 16:30:00,95,Chat,,sample-0350
+2026-10-22 17:15:00,2026-10-22 18:15:00,60,Code review,PR for CSV import,sample-0351
+2026-10-22 18:20:00,2026-10-22 18:35:00,15,Email,,sample-0352
+2026-10-22 18:40:00,2026-10-22 20:00:00,80,Hiring,Take-home review,sample-0353
+2026-10-22 20:05:00,2026-10-22 20:50:00,45,Planning,Roadmap,sample-0354
+2026-10-22 22:30:00,2026-10-23 00:15:00,105,Incident,Release deploy,sample-0355
+2026-10-23 09:05:00,2026-10-23 10:30:00,85,Meetings,1:1 with lead,sample-0356
+2026-10-23 10:35:00,2026-10-23 15:40:00,305,Project Atlas,Fix flaky export tests,sample-0357
+2026-10-23 15:45:00,2026-10-23 17:10:00,85,Chat,Answering the platform channel,sample-0358
+2026-10-23 17:55:00,2026-10-23 18:40:00,45,Code review,,sample-0359
+2026-10-23 18:45:00,2026-10-23 19:05:00,20,Email,,sample-0360
+2026-10-26 09:00:00,2026-10-26 10:10:00,70,Meetings,Reunião de alinhamento,sample-0361
+2026-10-26 10:15:00,2026-10-26 15:15:00,300,Project Atlas,Report by date range,sample-0362
+2026-10-26 15:20:00,2026-10-26 16:25:00,65,Chat,Support questions,sample-0363
+2026-10-26 17:10:00,2026-10-26 18:00:00,50,Code review,,sample-0364
+2026-10-26 18:05:00,2026-10-26 18:30:00,25,Email,,sample-0365
+2026-10-26 18:35:00,2026-10-26 20:05:00,90,Incident,On-call,sample-0366
+2026-10-27 09:05:00,2026-10-27 10:20:00,75,Meetings,Reunião de alinhamento,sample-0367
+2026-10-27 10:25:00,2026-10-27 15:15:00,290,Project Atlas,Report by date range,sample-0368
+2026-10-27 15:20:00,2026-10-27 16:20:00,60,Chat,Answering the platform channel,sample-0369
+2026-10-27 17:05:00,2026-10-27 17:45:00,40,Code review,Reviewing auth changes,sample-0370
+2026-10-27 17:50:00,2026-10-27 18:10:00,20,Email,,sample-0371
+2026-10-27 18:15:00,2026-10-27 19:00:00,45,Planning,Roadmap,sample-0372
+2026-10-28 09:10:00,2026-10-28 10:35:00,85,Meetings,Sprint planning,sample-0373
+2026-10-28 10:40:00,2026-10-28 15:40:00,300,Project Atlas,Import pipeline,sample-0374
+2026-10-28 15:45:00,2026-10-28 16:55:00,70,Chat,,sample-0375
+2026-10-28 17:40:00,2026-10-28 18:45:00,65,Code review,Reviewing auth changes,sample-0376
+2026-10-28 18:50:00,2026-10-28 19:25:00,35,Email,,sample-0377

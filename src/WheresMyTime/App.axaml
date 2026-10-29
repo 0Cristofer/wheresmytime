@@ -1,0 +1,122 @@
+﻿<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="WheresMyTime.App"
+             RequestedThemeVariant="Default">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+          <SolidColorBrush x:Key="CardBrush" Color="#F2F3F5" />
+          <SolidColorBrush x:Key="DividerBrush" Color="#E3E5E8" />
+          <SolidColorBrush x:Key="IconBrush" Color="#4B5563" />
+          <SolidColorBrush x:Key="ErrorBrush" Color="#B42318" />
+          <SolidColorBrush x:Key="WarningBrush" Color="#B54708" />
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Dark">
+          <SolidColorBrush x:Key="CardBrush" Color="#2A2D33" />
+          <SolidColorBrush x:Key="DividerBrush" Color="#3A3D44" />
+          <SolidColorBrush x:Key="IconBrush" Color="#C9CDD4" />
+          <SolidColorBrush x:Key="ErrorBrush" Color="#F97066" />
+          <SolidColorBrush x:Key="WarningBrush" Color="#FDB022" />
+        </ResourceDictionary>
+      </ResourceDictionary.ThemeDictionaries>
+
+      <!-- Stroked icons on a 24x24 grid. -->
+      <StreamGeometry x:Key="IconCopy">M9,9 H20 V20 H9 Z M5,15 H4 V4 H15 V5</StreamGeometry>
+      <StreamGeometry x:Key="IconEdit">M4,20 H8 L19,9 L15,5 L4,16 Z M13,7 L17,11</StreamGeometry>
+      <StreamGeometry x:Key="IconDelete">M4,7 H20 M9,7 V4 H15 V7 M6,7 L7,20 H17 L18,7 M10,11 V16 M14,11 V16</StreamGeometry>
+      <StreamGeometry x:Key="IconPrevious">M15,5 L8,12 L15,19</StreamGeometry>
+      <StreamGeometry x:Key="IconNext">M9,5 L16,12 L9,19</StreamGeometry>
+      <StreamGeometry x:Key="IconFolder">M3,6 H9 L11,8 H21 V19 H3 Z</StreamGeometry>
+    </ResourceDictionary>
+  </Application.Resources>
+
+  <Application.Styles>
+    <FluentTheme />
+
+    <!-- Every window, dialogs included, shows the app icon. -->
+    <Style Selector=":is(Window)">
+      <Setter Property="Icon" Value="/Assets/icon.ico" />
+    </Style>
+
+    <Style Selector="TextBlock.muted">
+      <Setter Property="Opacity" Value="0.65" />
+    </Style>
+    <Style Selector="TextBlock.small">
+      <Setter Property="FontSize" Value="12" />
+    </Style>
+    <Style Selector="TextBlock.label">
+      <Setter Property="FontSize" Value="12" />
+      <Setter Property="Opacity" Value="0.75" />
+    </Style>
+    <Style Selector="TextBlock.clock">
+      <Setter Property="FontSize" Value="56" />
+      <Setter Property="FontWeight" Value="Light" />
+      <Setter Property="FontFeatures" Value="+tnum" />
+    </Style>
+    <Style Selector="TextBlock.tabular">
+      <Setter Property="FontFeatures" Value="+tnum" />
+    </Style>
+
+    <Style Selector="Border.card">
+      <Setter Property="Background" Value="{DynamicResource CardBrush}" />
+      <Setter Property="CornerRadius" Value="8" />
+      <Setter Property="Padding" Value="12,6,4,6" />
+    </Style>
+
+    <Style Selector="Path.icon">
+      <Setter Property="Width" Value="16" />
+      <Setter Property="Height" Value="16" />
+      <Setter Property="Stretch" Value="Uniform" />
+      <Setter Property="Stroke" Value="{DynamicResource IconBrush}" />
+      <Setter Property="StrokeThickness" Value="1.6" />
+      <Setter Property="StrokeLineCap" Value="Round" />
+      <Setter Property="StrokeJoin" Value="Round" />
+    </Style>
+    <Style Selector="Button.icon">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Padding" Value="7" />
+    </Style>
+    <Style Selector="Button.icon:disabled /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="Button.icon:disabled Path.icon">
+      <Setter Property="Opacity" Value="0.3" />
+    </Style>
+
+    <!-- The big start/stop button: green when idle, red while the timer runs. -->
+    <Style Selector="Button.timer">
+      <Setter Property="HorizontalAlignment" Value="Stretch" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="Height" Value="54" />
+      <Setter Property="FontSize" Value="20" />
+      <Setter Property="FontFeatures" Value="+tnum" />
+      <Setter Property="CornerRadius" Value="10" />
+      <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style Selector="Button.timer.start">
+      <Setter Property="Background" Value="#1F8A4C" />
+    </Style>
+    <Style Selector="Button.timer.start:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#23A059" />
+      <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style Selector="Button.timer.start:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#1A7541" />
+      <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style Selector="Button.timer.stop">
+      <Setter Property="Background" Value="#C53030" />
+    </Style>
+    <Style Selector="Button.timer.stop:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#D63E3E" />
+      <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style Selector="Button.timer.stop:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#A82828" />
+      <Setter Property="Foreground" Value="White" />
+    </Style>
+  </Application.Styles>
+</Application>
