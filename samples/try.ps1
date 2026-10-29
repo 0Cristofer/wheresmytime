@@ -1,6 +1,6 @@
 # Runs the app from source against a throwaway data folder (samples/sandbox), so trying
 # things out never touches your real entries. In the app, click Import and pick
-# samples/sample-entries.csv.
+# samples/sample-month.csv (about a month) or samples/sample-entries.csv (12 weeks).
 #
 # Usage: powershell -ExecutionPolicy Bypass -File samples/try.ps1 [-Reset]
 #        -Reset empties the sandbox first.
@@ -13,5 +13,5 @@ New-Item -ItemType Directory -Force $sandbox | Out-Null
 
 $env:WHERESMYTIME_DATA_DIR = $sandbox
 Write-Host "Data folder: $sandbox"
-Write-Host "Sample to import: $(Join-Path $PSScriptRoot 'sample-entries.csv')"
+Write-Host "Samples to import (one at a time): $(Join-Path $PSScriptRoot 'sample-month.csv') or $(Join-Path $PSScriptRoot 'sample-entries.csv')"
 dotnet run --project (Join-Path $PSScriptRoot '..\src\WheresMyTime')

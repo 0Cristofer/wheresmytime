@@ -30,16 +30,19 @@ public class SampleDataTests
     }
 
     [Fact]
-    public void Few_days_sample_imports_cleanly()
+    public void Month_sample_imports_cleanly_and_covers_every_workday()
     {
-        var read = ReadSample("sample-few-days.csv");
+        var read = ReadSample("sample-month.csv");
 
-        Assert.Equal(34, read.Entries.Count);
-        Assert.Equal(
-            [new DateOnly(2026, 10, 22), new DateOnly(2026, 10, 23), new DateOnly(2026, 10, 26), new DateOnly(2026, 10, 27), new DateOnly(2026, 10, 28)],
-            read.Entries.Select(e => DateOnly.FromDateTime(e.Start)).Distinct());
+        Assert.Equal(129, read.Entries.Count);
+        Assert.Equal(7, read.Entries.Select(e => e.Activity).Distinct().Count());
+        var workdays = Enumerable.Range(0, 24)
+            .Select(i => new DateOnly(2026, 10, 5).AddDays(i))
+            .Where(d => d.DayOfWeek is not (DayOfWeek.Saturday or DayOfWeek.Sunday));
+        Assert.Equal(workdays, read.Entries.Select(e => DateOnly.FromDateTime(e.Start)).Distinct().Order());
         Assert.Contains(read.Entries, e => e.End.Date > e.Start.Date);
         Assert.Contains(read.Entries, e => e.Details == "Reviewing \"auth\" changes, part 2");
+        Assert.Contains(read.Entries, e => e.Details == "Hotfix deploy, rollback plan");
         Assert.Contains(read.Entries, e => e.Details == "Reunião de alinhamento");
     }
 }

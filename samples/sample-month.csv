@@ -1,0 +1,130 @@
+﻿start,end,duration_minutes,activity,details,id
+2026-10-05 09:00:00,2026-10-05 09:15:00,15,Meetings,Daily standup,month-0001
+2026-10-05 09:15:00,2026-10-05 10:40:00,85,Project Atlas,CSV parser,month-0002
+2026-10-05 10:40:00,2026-10-05 13:05:00,145,Chat,Support questions,month-0003
+2026-10-05 13:50:00,2026-10-05 14:50:00,60,Meetings,Sprint planning,month-0004
+2026-10-05 14:50:00,2026-10-05 15:30:00,40,Code review,,month-0005
+2026-10-05 15:30:00,2026-10-05 16:40:00,70,Project Atlas,Import pipeline,month-0006
+2026-10-05 16:40:00,2026-10-05 17:05:00,25,Email,,month-0007
+2026-10-06 09:00:00,2026-10-06 09:15:00,15,Meetings,Daily standup,month-0008
+2026-10-06 09:15:00,2026-10-06 10:40:00,85,Project Atlas,Import pipeline,month-0009
+2026-10-06 10:40:00,2026-10-06 12:55:00,135,Chat,Answering the platform channel,month-0010
+2026-10-06 13:40:00,2026-10-06 14:25:00,45,Meetings,Reunião de alinhamento,month-0011
+2026-10-06 14:25:00,2026-10-06 15:20:00,55,Code review,PR for CSV import,month-0012
+2026-10-06 15:20:00,2026-10-06 16:50:00,90,Project Atlas,Fix flaky export tests,month-0013
+2026-10-06 16:50:00,2026-10-06 17:15:00,25,Email,,month-0014
+2026-10-07 09:05:00,2026-10-07 09:20:00,15,Meetings,Daily standup,month-0015
+2026-10-07 09:20:00,2026-10-07 10:40:00,80,Project Atlas,Report by date range,month-0016
+2026-10-07 10:40:00,2026-10-07 12:50:00,130,Chat,Helping with the deploy,month-0017
+2026-10-07 13:35:00,2026-10-07 14:05:00,30,Meetings,1:1 with lead,month-0018
+2026-10-07 14:05:00,2026-10-07 14:40:00,35,Code review,,month-0019
+2026-10-07 14:40:00,2026-10-07 16:10:00,90,Project Atlas,Report by date range,month-0020
+2026-10-07 16:10:00,2026-10-07 16:35:00,25,Email,,month-0021
+2026-10-08 09:10:00,2026-10-08 09:25:00,15,Meetings,Daily standup,month-0022
+2026-10-08 09:25:00,2026-10-08 11:00:00,95,Project Atlas,Performance tuning,month-0023
+2026-10-08 11:00:00,2026-10-08 13:15:00,135,Chat,Support questions,month-0024
+2026-10-08 14:00:00,2026-10-08 14:45:00,45,Meetings,Design review,month-0025
+2026-10-08 14:45:00,2026-10-08 15:30:00,45,Code review,PR for CSV import,month-0026
+2026-10-08 15:30:00,2026-10-08 16:45:00,75,Project Atlas,CSV parser,month-0027
+2026-10-08 16:45:00,2026-10-08 17:05:00,20,Email,,month-0028
+2026-10-09 09:00:00,2026-10-09 09:15:00,15,Meetings,Daily standup,month-0029
+2026-10-09 09:15:00,2026-10-09 10:55:00,100,Project Atlas,CSV parser,month-0030
+2026-10-09 10:55:00,2026-10-09 12:55:00,120,Chat,Answering the platform channel,month-0031
+2026-10-09 13:40:00,2026-10-09 14:10:00,30,Meetings,Retro,month-0032
+2026-10-09 14:10:00,2026-10-09 15:10:00,60,Code review,,month-0033
+2026-10-09 15:10:00,2026-10-09 16:45:00,95,Project Atlas,Import pipeline,month-0034
+2026-10-09 16:45:00,2026-10-09 17:10:00,25,Email,,month-0035
+2026-10-12 09:00:00,2026-10-12 09:15:00,15,Meetings,Daily standup,month-0036
+2026-10-12 09:15:00,2026-10-12 11:00:00,105,Project Atlas,CSV parser,month-0037
+2026-10-12 11:00:00,2026-10-12 13:00:00,120,Chat,Answering the platform channel,month-0038
+2026-10-12 13:45:00,2026-10-12 14:45:00,60,Meetings,Sprint planning,month-0039
+2026-10-12 14:45:00,2026-10-12 16:20:00,95,Code review,"Reviewing ""auth"" changes, part 2",month-0040
+2026-10-12 16:20:00,2026-10-12 17:50:00,90,Project Atlas,Import pipeline,month-0041
+2026-10-12 17:50:00,2026-10-12 18:10:00,20,Email,,month-0042
+2026-10-13 09:05:00,2026-10-13 09:20:00,15,Meetings,Daily standup,month-0043
+2026-10-13 09:20:00,2026-10-13 11:15:00,115,Project Atlas,Import pipeline,month-0044
+2026-10-13 11:15:00,2026-10-13 13:10:00,115,Chat,Helping with the deploy,month-0045
+2026-10-13 13:55:00,2026-10-13 14:40:00,45,Meetings,Reunião de alinhamento,month-0046
+2026-10-13 14:40:00,2026-10-13 16:15:00,95,Code review,"Reviewing ""auth"" changes, part 2",month-0047
+2026-10-13 16:15:00,2026-10-13 17:55:00,100,Project Atlas,Fix flaky export tests,month-0048
+2026-10-13 17:55:00,2026-10-13 18:25:00,30,Email,,month-0049
+2026-10-14 09:00:00,2026-10-14 09:15:00,15,Meetings,Daily standup,month-0050
+2026-10-14 09:15:00,2026-10-14 11:10:00,115,Project Atlas,Report by date range,month-0051
+2026-10-14 11:10:00,2026-10-14 13:05:00,115,Chat,Support questions,month-0052
+2026-10-14 13:50:00,2026-10-14 14:20:00,30,Meetings,1:1 with lead,month-0053
+2026-10-14 14:20:00,2026-10-14 16:00:00,100,Code review,"Reviewing ""auth"" changes, part 2",month-0054
+2026-10-14 16:00:00,2026-10-14 17:50:00,110,Project Atlas,Report by date range,month-0055
+2026-10-14 17:50:00,2026-10-14 18:15:00,25,Email,,month-0056
+2026-10-15 09:05:00,2026-10-15 09:20:00,15,Meetings,Daily standup,month-0057
+2026-10-15 09:20:00,2026-10-15 11:20:00,120,Project Atlas,Performance tuning,month-0058
+2026-10-15 11:20:00,2026-10-15 13:10:00,110,Chat,Answering the platform channel,month-0059
+2026-10-15 13:55:00,2026-10-15 14:40:00,45,Meetings,Design review,month-0060
+2026-10-15 14:40:00,2026-10-15 16:35:00,115,Code review,"Reviewing ""auth"" changes, part 2",month-0061
+2026-10-15 16:35:00,2026-10-15 18:30:00,115,Project Atlas,CSV parser,month-0062
+2026-10-15 18:30:00,2026-10-15 19:00:00,30,Email,,month-0063
+2026-10-15 23:00:00,2026-10-16 00:20:00,80,Incident,"Hotfix deploy, rollback plan",month-0064
+2026-10-16 09:10:00,2026-10-16 09:25:00,15,Meetings,Daily standup,month-0065
+2026-10-16 09:25:00,2026-10-16 11:30:00,125,Project Atlas,CSV parser,month-0066
+2026-10-16 11:30:00,2026-10-16 13:10:00,100,Chat,Helping with the deploy,month-0067
+2026-10-16 13:55:00,2026-10-16 14:25:00,30,Meetings,Retro,month-0068
+2026-10-16 14:25:00,2026-10-16 16:15:00,110,Code review,"Reviewing ""auth"" changes, part 2",month-0069
+2026-10-16 16:15:00,2026-10-16 17:50:00,95,Project Atlas,Import pipeline,month-0070
+2026-10-16 17:50:00,2026-10-16 18:20:00,30,Email,,month-0071
+2026-10-19 09:10:00,2026-10-19 09:25:00,15,Meetings,Daily standup,month-0072
+2026-10-19 09:25:00,2026-10-19 11:40:00,135,Project Atlas,CSV parser,month-0073
+2026-10-19 11:40:00,2026-10-19 12:55:00,75,Chat,Helping with the deploy,month-0074
+2026-10-19 13:40:00,2026-10-19 14:40:00,60,Meetings,Sprint planning,month-0075
+2026-10-19 14:40:00,2026-10-19 15:25:00,45,Code review,,month-0076
+2026-10-19 15:25:00,2026-10-19 17:35:00,130,Project Atlas,Import pipeline,month-0077
+2026-10-19 17:35:00,2026-10-19 18:05:00,30,Email,,month-0078
+2026-10-20 09:00:00,2026-10-20 09:15:00,15,Meetings,Daily standup,month-0079
+2026-10-20 09:15:00,2026-10-20 11:50:00,155,Project Atlas,Import pipeline,month-0080
+2026-10-20 11:50:00,2026-10-20 13:05:00,75,Chat,Support questions,month-0081
+2026-10-20 13:50:00,2026-10-20 14:35:00,45,Meetings,Reunião de alinhamento,month-0082
+2026-10-20 14:35:00,2026-10-20 15:20:00,45,Code review,PR for CSV import,month-0083
+2026-10-20 15:20:00,2026-10-20 16:20:00,60,Hiring,Interview,month-0084
+2026-10-20 16:20:00,2026-10-20 18:20:00,120,Project Atlas,Fix flaky export tests,month-0085
+2026-10-20 18:20:00,2026-10-20 18:40:00,20,Email,,month-0086
+2026-10-21 09:00:00,2026-10-21 09:15:00,15,Meetings,Daily standup,month-0087
+2026-10-21 09:15:00,2026-10-21 11:45:00,150,Project Atlas,Report by date range,month-0088
+2026-10-21 11:45:00,2026-10-21 13:00:00,75,Chat,Answering the platform channel,month-0089
+2026-10-21 13:45:00,2026-10-21 14:15:00,30,Meetings,1:1 with lead,month-0090
+2026-10-21 14:15:00,2026-10-21 15:20:00,65,Code review,,month-0091
+2026-10-21 15:20:00,2026-10-21 17:25:00,125,Project Atlas,Report by date range,month-0092
+2026-10-21 17:25:00,2026-10-21 17:50:00,25,Email,,month-0093
+2026-10-22 09:10:00,2026-10-22 09:25:00,15,Meetings,Daily standup,month-0094
+2026-10-22 09:25:00,2026-10-22 12:00:00,155,Project Atlas,Performance tuning,month-0095
+2026-10-22 12:00:00,2026-10-22 13:10:00,70,Chat,Helping with the deploy,month-0096
+2026-10-22 13:55:00,2026-10-22 14:40:00,45,Meetings,Design review,month-0097
+2026-10-22 14:40:00,2026-10-22 15:45:00,65,Code review,PR for CSV import,month-0098
+2026-10-22 15:45:00,2026-10-22 16:45:00,60,Hiring,Interview,month-0099
+2026-10-22 16:45:00,2026-10-22 18:45:00,120,Project Atlas,CSV parser,month-0100
+2026-10-22 18:45:00,2026-10-22 19:15:00,30,Email,,month-0101
+2026-10-23 09:00:00,2026-10-23 09:15:00,15,Meetings,Daily standup,month-0102
+2026-10-23 09:15:00,2026-10-23 11:55:00,160,Project Atlas,CSV parser,month-0103
+2026-10-23 11:55:00,2026-10-23 13:05:00,70,Chat,Support questions,month-0104
+2026-10-23 13:50:00,2026-10-23 14:20:00,30,Meetings,Retro,month-0105
+2026-10-23 14:20:00,2026-10-23 15:15:00,55,Code review,,month-0106
+2026-10-23 15:15:00,2026-10-23 17:40:00,145,Project Atlas,Import pipeline,month-0107
+2026-10-23 17:40:00,2026-10-23 18:00:00,20,Email,,month-0108
+2026-10-26 09:00:00,2026-10-26 09:15:00,15,Meetings,Daily standup,month-0109
+2026-10-26 09:15:00,2026-10-26 12:10:00,175,Project Atlas,CSV parser,month-0110
+2026-10-26 12:10:00,2026-10-26 13:05:00,55,Chat,Support questions,month-0111
+2026-10-26 13:50:00,2026-10-26 14:50:00,60,Meetings,Sprint planning,month-0112
+2026-10-26 14:50:00,2026-10-26 15:50:00,60,Code review,PR for CSV import,month-0113
+2026-10-26 15:50:00,2026-10-26 18:15:00,145,Project Atlas,Import pipeline,month-0114
+2026-10-26 18:15:00,2026-10-26 18:45:00,30,Email,,month-0115
+2026-10-27 09:10:00,2026-10-27 09:25:00,15,Meetings,Daily standup,month-0116
+2026-10-27 09:25:00,2026-10-27 12:30:00,185,Project Atlas,Import pipeline,month-0117
+2026-10-27 12:30:00,2026-10-27 13:25:00,55,Chat,Answering the platform channel,month-0118
+2026-10-27 14:10:00,2026-10-27 14:55:00,45,Meetings,Reunião de alinhamento,month-0119
+2026-10-27 14:55:00,2026-10-27 15:45:00,50,Code review,,month-0120
+2026-10-27 15:45:00,2026-10-27 18:10:00,145,Project Atlas,Fix flaky export tests,month-0121
+2026-10-27 18:10:00,2026-10-27 18:30:00,20,Email,,month-0122
+2026-10-28 09:10:00,2026-10-28 09:25:00,15,Meetings,Daily standup,month-0123
+2026-10-28 09:25:00,2026-10-28 12:20:00,175,Project Atlas,Report by date range,month-0124
+2026-10-28 12:20:00,2026-10-28 13:10:00,50,Chat,Helping with the deploy,month-0125
+2026-10-28 13:55:00,2026-10-28 14:25:00,30,Meetings,1:1 with lead,month-0126
+2026-10-28 14:25:00,2026-10-28 15:00:00,35,Code review,PR for CSV import,month-0127
+2026-10-28 15:00:00,2026-10-28 17:30:00,150,Project Atlas,Report by date range,month-0128
+2026-10-28 17:30:00,2026-10-28 18:05:00,35,Email,,month-0129

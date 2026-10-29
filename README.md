@@ -60,8 +60,8 @@ A tiny desktop timer for seeing where your workday goes. Press **Start** when yo
 
 There are two samples:
 
-- [`samples/sample-few-days.csv`](samples/sample-few-days.csv): 34 entries over five workdays, 2026-10-22 to 2026-10-28 (Thursday to Wednesday, across a weekend). Good for the day list, editing, and the **This week** / **Last week** stats.
-- [`samples/sample-entries.csv`](samples/sample-entries.csv): 377 entries covering 2026-08-03 to 2026-10-28. Project Atlas grows over that period, Chat shrinks, and there are enough activities for "Other" to appear. Good for the Breakdown and Trend charts.
+- [`samples/sample-month.csv`](samples/sample-month.csv): 129 entries over every workday from Monday 2026-10-05 to Wednesday 2026-10-28 (three full weeks plus most of the fourth) and 7 activities. Project Atlas ramps up, Chat tapers off, and code review spikes in the second week. **This month** shows those trends day by day; **Last 12 weeks** shows them as four weekly points, the last one faded because the week isn't over.
+- [`samples/sample-entries.csv`](samples/sample-entries.csv): 377 entries covering 2026-08-03 to 2026-10-28. The same trends over 12 weeks, with enough activities for "Other" to appear.
 
 Both include an entry that runs past midnight and details with quotes, commas and accents. Their dates overlap, so import one at a time (start over with `-Reset` in between).
 
@@ -74,7 +74,7 @@ powershell -ExecutionPolicy Bypass -File samples/try.ps1
 On macOS or Linux, run `./samples/try.sh` instead. Then:
 
 1. Click **Import** and pick one of the samples.
-2. Use ‹ › to step through the days, or open **Stats**. With the 12-week sample, choose **Last 12 weeks** and look at the Breakdown and Trend tabs.
+2. Use ‹ › to step through the days, or open **Stats**, pick **This month** or **Last 12 weeks**, and look at the Breakdown and Trend tabs.
 3. Click a line or a legend name to highlight that activity.
 
 Add `-Reset` (or `--reset`) to start over with an empty sandbox. The samples' dates are fixed, so if you try them much later, use the date pickers (or ‹ ›) to go back to that period.
